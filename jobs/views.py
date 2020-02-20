@@ -4,3 +4,7 @@ from .models import jobs
 def home(request):
     job = jobs.objects
     return render(request,'jobs/home.html', {'job': job})
+
+def login(request):
+    login = login.objects
+    return render(request, 'jobs/login.html' , {'login' : login})
