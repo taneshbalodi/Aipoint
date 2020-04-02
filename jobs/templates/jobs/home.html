@@ -1,382 +1,487 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% load static  %}
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Tanesh's Blogs</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
-    <link rel="stylesheet" href="style.css"/>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"</script>
-
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#3BAFAC">
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-compatible" content="ie=edge">
+  <title>AIpointhomepage</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
+  <link rel="stylesheet" href ="{% static "css/owl.carousel.min.css" %}">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
 
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+</head>
+<body>
 
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+  <header>
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-code-branch fa-3x mx-3"></i>
+
+          AIpoint</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-align-right text-light"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="https://twitter.com/TaneshBalodi">Twitter </a>
-            <a class="nav-item nav-link" href="https://www.linkedin.com/in/tanesh-balodi-70bbab17a/">LinkedIn</a>
-            <a class="nav-item nav-link" href="https://medium.com/@taneshbalodi8">Medium</a>
-            <a class="nav-item nav-link " href="{% url "allblogs" %}">Blogs</a>
-            <button type="button" class="btn btn-info" >Login/JoinUs</button>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "allblogs" %}">Blogs</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class ="dropdown">
+                <a href = "#" class="nav-link">Graphics</a>
+                <div class="dropdown-content">
+                  <a href="#">Artificial Intelligence</a>
+                  <a href="#">Machine learning</a>
+                  <a href="#">Business Analyst</a>
+
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">our services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "about" %}">About us</a>
+            </li>
+          </ul>
         </div>
       </nav>
-</header>
-
-
-
-<style type="text/css">
-
-</style>
-<main role="main">
-
-
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-
-
-
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-
-    <h1 class="display-4 font-weight-normal">Tanesh Balodi</h1>
-    <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div>
-</div>
-
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active slide-one">
-        <div class="container">
+      <div class = "container text-center">
         <div class="row">
-        <div class="col-md-6">
-        <h1>Tanesh</h1>
-        <p>Hey i am tanesh balodi and i am a developer with machine learning skills
-         and iam providing you all the basics you need to know to get started with
-          machine learning and artificial intelligence
-        </p>
-        <button type ="button">Read more</button>
+          <div class="col-md-7 col-sm-12">
+            <h1 class= "animated bounceIn delay-1s" text = "left-align"> AIpoint is Here!</h1>
+            <h3 class= "animated bounceIn delay-2s">Get along with the journey of AI</h3>
+            <br>
+            <p class= "animated bounceIn delay-3s">Welcome to the AIpoint,
+              We are creating an enthusiasts
+              for the future of AI.
+            <p>
+            <button type = "button" class = "animated jackInTheBox delay-2s">Know About Us </button>
+          </div>
+          <div class="col-md-5 col-sm-12 h-25">
+            <img src="{% static "img-19.png" %}"  alt="AIpoint" class = "pic-one animated zoomIn delay-2s"/>
+          </div>
         </div>
 
-        <div class="col-md-6">
-        <div class="img-box" class="pic-one">
-          <img src = "media\Images\4.jpg" width = 750px  height= 400px>
-       </div>
-       </div>
+
       </div>
-      </div>
-    <div class="carousel-item">
+
 
     </div>
-    <div class="carousel-item">
 
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  </header>
 
 
-<br/>
+  <main>
 
 
-
-
-
-
-
-<div class="row mb-2">
-  <div class="col-md-6">
-    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-      {% for jobs in job.all  %}
-      <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary">Deep Learning</strong>
-        <h3 class="mb-0">Featured post</h3>
-        <div class="mb-1 text-muted">Nov 12</div>
-        <p class="card-text mb-auto">{{ jobs.summary }}</p>
-        <a href="#" class="stretched-link">Continue reading</a>
-      </div>
-      <div class="col-auto d-none d-lg-block">
-        <img class = "card-img-left" src = "{{ jobs.Image.url }}" width = "200" height = " 250" />
-      </div>
-    </div>
-  </div>
-
-
-  {% endfor  %}
-
-
-
-
-
-
-
-
-<br/>
-<hr class="featurette-divider">
-
-
-
-
-
-
-
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
-
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-    <br/>
-    <br/>
-
-
-
-
-
-
-
-
-
-</main>
-<!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
-
-  <div style="background-color: #0000;">
-    <div class="container">
-
-      <!-- Grid row-->
-      <div class="row py-4 d-flex align-items-center">
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Get connected with us on social networks! </h6>
+    <section>
+        <div class="blog">
+            <div class="container">
+                <div class="owl-carousel owl-theme blog-post">
+                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                        <img src="{% static "post-1.jpg" %}"  alt="post-1">
+                        <div class="blog-title">
+                            <h3>London Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+                            <span>2 minutes</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                        <img src="{% static "post-3.jpg" %}"  alt="post-1">
+                        <div class="blog-title">
+                            <h3>London Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+                            <span>2 minutes</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                        <img src="{% static "post-2.jpg" %}" alt="post-1">
+                        <div class="blog-title">
+                            <h3>London Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+                            <span>2 minutes</span>
+                        </div>
+                    </div>
+                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                        <img src="{% static "post-5.jpg" %}"  alt="post-1">
+                        <div class="blog-title">
+                            <h3>London Fashion week's continued the evolution</h3>
+                            <button class="btn btn-blog">Fashion</button>
+                            <span>2 minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-navigation">
+                    <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                    <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                </div>
+            </div>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f white-text mr-4"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter white-text mr-4"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram white-text"> </i>
-          </a>
-
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row-->
-
-    </div>
-  </div>
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
-    <!-- Grid row -->
-    <div class="row mt-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-        <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">AIpoint</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Your Account</a>
-        </p>
-        <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fas fa-home mr-3"></i> New Delhi, Dwarka, IN</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> taneshbalodi8@gmail.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i>+91 7838727941</p>
+    </section>
 
 
-      </div>
-      <!-- Grid column -->
 
-    </div>
-    <!-- Grid row -->
+        <section class="container">
+            <div class="site-content">
+                <div class="posts">
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static "blog1.png" %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
+                                <span>2 Commets</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Why should boys have all the fun? it's the women who are making india an
+                                alcohol-loving contry</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
+                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
+                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
+                                illum similique veniam tempore unde?
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static "blog2.png" %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
+                                <span>7 Commets</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">Why should boys have all the fun? it's the women who are making india an
+                                alcohol-loving contry</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
+                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
+                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
+                                illum similique veniam tempore unde?
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="post-image">
+                            <div>
+                                <img src="{% static "blog3.png" %}" class="img" alt="blog1">
+                            </div>
+                            <div class="post-info flex-row">
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 19, 2019</span>
+                                <span>5 Commets</span>
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <a href="#">New data recording system to better analyse road accidents</a>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
+                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
+                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
+                                illum similique veniam tempore unde?
+                            </p>
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
 
-  </div>
-  <!-- Footer Links -->
+                    <div class="pagination flex-row">
+                        <a href="#"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="pages">1</a>
+                        <a href="#" class="pages">2</a>
+                        <a href="#" class="pages">3</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <div class="category">
+                        <h2>Category</h2>
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
+                                <a href="#">Software</a>
+                                <span>(05)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
+                                <a href="#">Techonlogy</a>
+                                <span>(02)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="300">
+                                <a href="#">Lifestyle</a>
+                                <span>(07)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
+                                <a href="#">Shopping</a>
+                                <span>(01)</span>
+                            </li>
+                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
+                                <a href="#">Food</a>
+                                <span>(08)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="popular-post">
+                        <h2>Popular Post</h2>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./images/popular-post/m-blog-1.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                        2019</span>
+                                    <span>2 Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">New data recording system to better analyse road accidents</a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./images/popular-post/m-blog-2.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                        2019</span>
+                                    <span>2 Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">New data recording system to better analyse road accidents</a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./images/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                        2019</span>
+                                    <span>2 Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">New data recording system to better analyse road accidents</a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./images/popular-post/m-blog-4.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                        2019</span>
+                                    <span>2 Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">New data recording system to better analyse road accidents</a>
+                            </div>
+                        </div>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./images/popular-post/m-blog-5.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
+                                        2019</span>
+                                    <span>2 Commets</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <a href="#">New data recording system to better analyse road accidents</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
+                        <h2>Newsletter</h2>
+                        <div class="form-element">
+                            <input type="text" class="input-element" placeholder="Email">
+                            <button class="btn form-btn">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="popular-tags">
+                        <h2>Popular Tags</h2>
+                        <div class="tags flex-row">
+                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Software</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="200">technology</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="300">travel</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="400">illustration</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="500">design</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="600">lifestyle</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="700">love</span>
+                            <span class="tag" data-aos="flip-up" data-aos-delay="800">project</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="taneshbalodi8@gmail.com"> TaneshBalodi</a>
-  </div>
-  <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
+	<div class="container-center">
+		<div class="btn-bar">
+			<div class="container-btn-prev">
+				<a class="btn prev" href="#myData" data-slide="prev">❮</a>
+			</div>
+
+
+
+
+
+			<!--Start Of the Carousel Cards-->
+
+
+
+
+			<div id="myData" class="carousel slide">
+				<div class="carousel-inner">
+
+
+
+
+					<!--ML-->
+
+
+
+					<div class="item active">
+						<div class="container-card-head">
+							<h2>Machine Learning</h2>
+						</div><br>
+						<div class="row">
+              {% for jobs in job.all%}
+							<div class="column">
+								<div class="card">
+									<img class="card-img-top" src="{{ jobs.Image.url }}" alt="Machine Learning" alt="First Lesson" style="width: 270px">
+									<div class="card-body">
+										<h4 class="card-title">First Lesson</h4>
+										<p class="card-text">{{ jobs.summary }}</p>
+										<a href="#" class="btn btn-primary stretched-link">Read More</a>
+									</div>
+								</div>
+							</div>
+              {% endfor %}
+
+
+    </main>
+
+
+
+                <footer>
+                  <div class="container-fluid p-0">
+                    <div class="row text-left">
+                      <div class="col-md-5 col-md-5">
+                        <h1 class=text-light>About Us</h1>
+                        <p class="text-muted">
+                          In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.
+                        </p>
+                        <p class="text-muted pt-4">
+                          Copyright @2020 All rights reserved by AIpoint by
+                          <span> Tanesh Balodi </span>
+
+                        </p>
+                      </div>
+                      <div class="col-md-5">
+                        <h4 class="text-light">Newsletter</h4>
+                        <p class="text-muted">Stay Updated</p>
+                        <form class="form-inline">
+                          <div class="col pl-0">
+                            <div class="input-group pr-5">
+                              <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                              <div class="inpiut-group-prepend">
+                                <div class="input-group-text">
+                                  <i class="fas fa-arrow-right"></i>
+
+                                </div>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </form>
+                      </div>
+                      <div class="col-md-2 col-sm-12">
+                        <h4 class="text-light">Follow Us</h4>
+                        <p class="text-muted">Go social with us</p>
+                        <div class="column">
+                          <i class="fab fa-facebook-f"></i>
+                          <i class="fab fa-instagram"></i>
+                          <i class="fab fa-twitter"></i>
+                          <i class="fab fa-youtube"></i>
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+
+                </footer>
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+      <!-- Jquery Library file -->
+      <script src="{ % static "./js/owl.carousel.min.js" % }"></script>
+
+      <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
+
+
+      <script src="{ % static "./js/aos.js" % }"></script>
+
+      <script src="{% static "./js/main.js" % }"></script>
+      <script src="{ % static "./js/fontawesome.js" % }"></script>
+      <script src="{ % static "./js/bootstrap.min.js" % }"></script>
+
+
+
+
+
+
+
+
+</body>
 
 </html>
