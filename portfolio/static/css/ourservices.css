@@ -1,0 +1,207 @@
+
+body
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Poppins' , sans-serif;
+}
+.container
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.container .box
+{
+	position: relative;
+	width: 350px;
+	padding: 40px;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+	border-radius: 4px;
+	margin: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-align: center;
+}
+
+.container .box:before
+{
+	content: '';
+	width: 800px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -800px;
+	background: rgba(255,255,255,.2);
+	z-index: 2;
+	pointer-events: none;
+	transform:skew(280deg);
+}
+.container .box .icon
+{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	color: #fff;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	border-radius: 50%;
+	font-size: 40px;
+	font-weight: 700;
+	transition: 0.5s;
+}
+
+.container .box:nth-child(1) .icon
+{
+	box-shadow: 0 0 0 0 #e91e63;
+	background: #e91e63;
+}
+
+.container .box:nth-child(1):hover .icon
+{
+	box-shadow: 0 0 0 400px #e91e63;
+
+}
+
+.container .box:nth-child(2) .icon
+{
+	box-shadow: 0 0 0 0 #23e629;
+	background: #23e629;
+}
+
+.container .box:nth-child(2):hover .icon
+{
+	box-shadow: 0 0 0 400px #23e629;
+
+}
+
+.container .box:nth-child(3) .icon
+{
+	box-shadow: 0 0 0 0 #2196f3;
+	background: #2196f3;
+}
+
+.container .box:nth-child(3):hover .icon
+{
+	box-shadow: 0 0 0 400px #2196f3;
+
+}
+
+.container .box .content
+{
+	position: relative;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.container .box:hover .content
+{
+	color: #fff;
+}
+
+.container .box .content h3
+{
+	font-size: 20px;
+	margin: 10px 0;
+	padding: 0;
+}
+
+.container .box .content p
+{
+	margin: 0;
+	padding: 0;
+}
+
+button
+{
+	display: inline-block;
+	padding: 10px 20px;
+	background: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
+	margin-top: 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: rgba(255,255,255,.4);
+  padding-top:50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  padding: 20px;
+  border: 5px solid #888;
+  border-radius: 8px;
+  width: 30%; /* Could be more or less, depending on screen size */
+  text-align: center;
+}
+.modal .modal-content label{
+	margin: 5px;
+	padding: 2px;
+}
+.modal .modal-content input{
+	margin: 5px;
+	border: 2px solid #888;
+	border-radius: 8px;
+	padding: 10px;
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.submit-mail{
+	transition: 0.1s;
+}
+.submit-mail:focus,.submit-mail:hover{
+	opacity: 0.7;
+	background: green;
+	color: #fff;
+}
+.cancelbtn{
+	transition: 0.3s;
+}
+.reset{
+	transition: 0.3s;
+}
+.reset:focus, .reset:hover{
+	opacity: 0.7;
+	background: #2196f3;
+	color: #fff;
+}
+
+.cancelbtn:focus,.cancelbtn:hover{
+	opacity: 0.7;
+	background:red;
+	color: #fff;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .submit-mail {
+     width: 100%;
+  }

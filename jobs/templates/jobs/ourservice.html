@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+
+	<link rel="stylesheet" type="text/css" href="{% static "css/ourservices.css" %}">
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<div class="icon">01</div>
+			<div class="content">
+				<h3>Graphic Designing</h3>
+				<p>Any graphic or animation for your personal or professional work.</br></br><strong>Price starting from 150 INR to 3000 INR </strong>  </p>
+				<button onclick="document.getElementById('id01').style.display='block'">Contact Us</button>
+			</div>
+		</div>
+		<div class="box">
+			<div class="icon">02</div>
+			<div class="content">
+				<h3>Web Development</h3>
+				<p>Build your professional website with us.</br></br><strong>Price starting from 15000 INR to 30,00,000 INR </strong> </p>
+				<button href="#" class="button" disabled>Contact Us</button>
+			</div>
+		</div>
+		<div class="box">
+			<div class="icon">03</div>
+			<div class="content">
+				<h3>Chatbots</h3>
+				<p>Chatbots functionality for your business/startup website at affordable price.</br></br><strong>Price starting from 10,000 INR to 25,000 INR </strong> </p>
+				<button href="#" class="button" disabled>Contact Us</button>
+			</div>
+		</div>
+	</div>
+	<div id="id01" class="modal">
+		<form class="modal-content" action="/action_page.php">
+			<div class="modal-container">
+				<h1>Contact Us</h1>
+				<hr>
+				<label for="name"><b>Your name</b></label>
+			    <input type="text" placeholder="Enter name" name="name" required><br>
+
+				<label for="email"><b>Your E-mail</b></label>
+			    <input type="email" placeholder="Enter E-mail" name="email" required><br>
+
+			    <label for="service"><b>Service</b></label>
+			    <input type="text" name="service" value="Web development" disabled>
+				<p>Please do fill the above form proffesionally</p>
+		    	<div class="clearfix">
+			       	<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+				  	<button type="reset" class="reset">Reset</button>
+				  	<button type="submit" class="submit-mail">Send</button>
+				</div>
+			</div>
+		</form>
+	</div>
+  <br>
+  <br>
+  <br>
+
+</body>
+<script type="text/javascript" src="{ % static "./js/ourservices.js" % }"></script>
+</html>

@@ -1,98 +1,284 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Tanesh's Blogs</title>
+<head>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+  {% load static %}
+  <meta charset="UTF-8">
 
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-compatible" content="ie=edge">
+  <title>AIpointblogs</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+	<link rel="stylesheet" href="{% static "css/style4.css" %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<!-- Fancybox-->
+	<link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/fontastic.css" %}">
+	<link rel="stylesheet" href="{% static "css/home.css" %}">
+	<link rel="shortcut icon" href="favicon.png">
+  <script type="text/javascript" src="{% static "js/tiny_mce/tiny_mce.js" %}"></script>
+
+<!--Tinymce Text-Editor (Must be in Head Tag) -->
+  <script src="{% static '.\js\tinymce.js' %}"></script>
+  <script type="text/javascript" src="{% static '.\js\tinymce2.js' %}" ></script>
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static "css/animate.min.css" %}">
+
+
+  <style media="screen">
+    header img{
+      height : 100px;
+      width : 100px;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
+
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">
+          <img src="{% static "logo4.png" %}" alt="AIlogo">
+          AIpoint</a>
 
-      <a class="navbar-brand" href="{%url "home" %}">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="https://twitter.com/TaneshBalodi">Twitter </a>
-          <a class="nav-item nav-link" href="https://www.linkedin.com/in/tanesh-balodi-70bbab17a/">LinkedIn</a>
-          <a class="nav-item nav-link" href="https://medium.com/@taneshbalodi8">Medium</a>
-          <a class="nav-item nav-link active " href="{% url "allblogs" %}">Blogs</a>
-          <button type="button" class="btn btn-info">Login/JoinUs</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url "home" %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "post-list" %}">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "privacy" %}">Privacy Policy</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "ourservice" %}">our services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "about" %}">About us</a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
-</header>
-<br />
-<br />
-<main role="main">
-  <div class = "container">
+      </nav>
+    </header>
 
-  <h1 class = "text-center pt-4"> Hey, Welcome to my blogs </h1>
-  <br />
-  <br />
-  <h2>Latest blogs</h2>
-  <hr />
+
+    <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="posts-listing col-lg-8">
+          <div class="container">
+            <div class="row">
+              <!-- post -->
+              {% for post in queryset %}
+              <div class="post col-xl-6">
+                <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+                <div class="post-details">
+                  <div class="post-meta d-flex justify-content-between">
+                    <!-- <div class="date meta-last">20 May | 2016</div> -->
+                    {% for cat in  post.categories.all %}
+                    <div class="category"><a href="#">{{ cat.title }}</a></div>
+                    {% endfor %}
+                  </div><a href="{{ post.get_absolute_url }}">
+                    <h3 class="h4">{{ post.title }}</h3></a>
+                  <p class="text-muted">{{ post.overview }}</p>
+
+                </div>
+              </div>
+              {% endfor %}
+
+
+            <!-- Pagination -->
+            <!-- Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-template d-flex justify-content-center">
+      {% if queryset.has_previous %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.previous_page_number }}" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+      {% endif %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.number }}" class="page-link active">{{ queryset.number }}</a></li>
+      {% if queryset.has_next %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.next_page_number }}" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  {% if is_paginated %}
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-template d-flex justify-content-center">
+      {% if page_obj.has_previous %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ page_obj.previous_page_number }}" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+      {% endif %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ page_obj.number }}" class="page-link active">{{ page_obj.number }}</a></li>
+      {% if page_obj.has_next %}
+      <li class="page-item"><a href="?{{ page_request_var }}={{ page_obj.next_page_number }}" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  {% endif %}
 </div>
-  <div class="container">
-  {% for blog in blogs.all %}
-
-  <a href="{% url 'detail' blog.id %}"><h3>{{ blog.Title }}</h3></a>
-  {{blog.Publ_date}}
-  <br />
-  <img class="img-fluid" src =" {{ blog.image.url }}"height = 300 width =300/>
-  <br />
-  <p>{{ blog.summary }}</p>
-  {% endfor %}
-</div>
-
-
 </main>
+        <aside class="col-lg-4">
+          <!-- Widget [Search Bar Widget]-->
+          <div class="widget search">
+            <header>
+              <h3 class="h6">Search the blog</h3>
+            </header>
+            <form action="{% url 'search' %}" class="search-form">
+              <div class="form-group">
+                <input type="text" name ="q" placeholder="What are you looking for?">
+                <button type="submit" class="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+          <!-- Widget [Latest Posts Widget]        -->
+          <div class="widget latest-posts">
+            <header>
+              <h3 class="h6">Latest Posts</h3>
+            </header>
+            <div class="blog-posts"><a href="#">
+              {% for post in most_recent %}
+              <a href="{{ post.get_absolute_url }}">
+                <div class="item d-flex align-items-center">
+                  <div class="image"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>{{ post.title }}</strong>
+                    <div class="d-flex align-items-center">
+                      <div class="views"><i class="fa fa-eye"></i> {{ post.view_count }}</div>
 
-<footer class="text-muted">
-  <div class="container text-center">
-  <p>© Tanesh {%  now "Y" %}</p>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
+                      <div class="comments"><i class="fa fa-comments"></i>{{ post.comment_count }}</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {% endfor %}
+
+
+
+
+          </div>
+          <!-- Widget [Categories Widget]-->
+          <div class="widget categories">
+            <header>
+              <h3 class="h6">Categories</h3>
+            </header>
+            {% for cat in category_count %}
+            <div class="item d-flex justify-content-between"><a href="#">{{ cat.categories__title }}</a><span>{{ cat.categories__title__count }}</span></div>
+            {% endfor %}
+
+          </div>
+          <!-- Widget [Tags Cloud Widget]-->
+
+        </aside>
+      </div>
+    </div>
+    <!-- Page Footer-->
+
+                    <footer>
+                      <div class="container-fluid p-0">
+                        <div class="row text-left">
+                          <div class="col-md-5 col-md-5">
+                            <h1 class=text-light>About Us</h1>
+                            <p class="text-muted">
+                              In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.
+                            </p>
+                            <p class="text-muted pt-4">
+                              Copyright @2020 All rights reserved by AIpoint by
+                              <span> Tanesh Balodi </span>
+
+                            </p>
+                          </div>
+                          <div class="col-md-5">
+                            <h4 class="text-light">Newsletter</h4>
+                            <p class="text-muted">Stay Updated</p>
+                            <form class="form-inline">
+                              <div class="col pl-0">
+                                <div class="input-group pr-5">
+                                  <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                                  <div class="inpiut-group-prepend">
+                                    <div class="input-group-text">
+                                      <i class="fas fa-arrow-right"></i>
+
+                                    </div>
+
+                                  </div>
+
+                                </div>
+
+                              </div>
+
+                            </form>
+                          </div>
+                          <div class="col-md-2 col-sm-12">
+                            <h4 class="text-light">Follow Us</h4>
+                            <p class="text-muted">Go social with us</p>
+                            <div class="column">
+                              <i class="fab fa-facebook-f"></i>
+                              <i class="fab fa-instagram"></i>
+                              <i class="fab fa-twitter"></i>
+                              <i class="fab fa-youtube"></i>
+
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+
+                    </footer>
+
+    <!-- JavaScript files-->
+
+		      <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
+
+
+		      <script src="{ % static "./js/homepopper.js" % }"></script>
+
+
+		      <script src="{ % static "./js/fontawesome.js" % }"></script>
+		      <script src="{ % static "./js/bootstrap.min.js" % }"></script>
+		      <script src="{ % static "./js/fancybox.min.js" % }"></script>
+		      <script src="{ % static "./js/front.js" % }"></script>
+		      <script src="{ % static "./js/jquery.cookie.js" % }"></script>
+
+          <script type="text/javascript" src="{% static "js/tiny_mce/tiny_mce.js" %}"></script>
+          <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+
+  </body>
 </html>

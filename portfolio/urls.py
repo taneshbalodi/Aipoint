@@ -19,10 +19,22 @@ from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
+from django.conf.urls import url, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
     path('blog/', include('blog.urls')),
-    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^about$', jobs.views.about, name='about'),
+    url(r'^privacy$', jobs.views.privacy, name='privacy'),
+    url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
+    path('tinymce/', include('tinymce.urls')),
+    path(r'ckeditor', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

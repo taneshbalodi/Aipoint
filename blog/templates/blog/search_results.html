@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  {% load static %}
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-compatible" content="ie=edge">
+  <title>AIpointblogs</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="{% static "css/style3.css" %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<!-- Fancybox-->
+	<link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/fontastic.css" %}">
+	<link rel="stylesheet" href="{% static "css/home.css" %}">
+	<link rel="shortcut icon" href="favicon.png">
+	<link rel="stylesheet" href="{% static "css/animate.min.css" %}">
+
+  <style>
+  header img{
+    height : 100px;
+    width : 100px;
+  }
+
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">
+          <img src="{% static "logo4.png" %}" alt="AIlogo">
+
+          AIpoint</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url "home" %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "post-list" %}">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "privacy" %}">Privacy Policy</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "ourservice" %}">our services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "about" %}">About us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
+  {% for post in queryset %}
+  <div class="post col-xl-6 " style="padding-top: 10px;">
+    <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+    <div class="post-details">
+      <div class="post-meta d-flex justify-content-between">
+        <!-- <div class="date meta-last">20 May | 2016</div> -->
+        {% for cat in  post.categories.all %}
+        <div class="category"><a href="#">{{ cat.title }}</a></div>
+        {% endfor %}
+      </div><a href="{{ post.get_absolute_url }}">
+        <h3 class="h4">{{ post.title }}</h3></a>
+      <p class="text-muted">{{ post.overview }}</p>
+
+    </div>
+  </div>
+  {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="container-fluid p-0">
+    <div class="row text-left">
+      <div class="col-md-5 col-md-5">
+        <h1 class=text-light>About Us</h1>
+        <p class="text-muted">
+          In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.
+        </p>
+        <p class="text-muted pt-4">
+          Copyright @2020 All rights reserved by AIpoint by
+          <span> Tanesh Balodi </span>
+
+        </p>
+      </div>
+      <div class="col-md-5">
+        <h4 class="text-light">Newsletter</h4>
+        <p class="text-muted">Stay Updated</p>
+        <form class="form-inline">
+          <div class="col pl-0">
+            <div class="input-group pr-5">
+              <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+              <div class="inpiut-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-arrow-right"></i>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+      <div class="col-md-2 col-sm-12">
+        <h4 class="text-light">Follow Us</h4>
+        <p class="text-muted">Go social with us</p>
+        <div class="column">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</footer>
+
+
+</body>
+</html>

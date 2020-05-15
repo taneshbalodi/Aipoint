@@ -1,10 +1,12 @@
 
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.allblogs, name = 'allblogs'),
-    path('<int:blog_id>/', views.detail, name = 'detail'),
+    path('allblogs/', views.allblogs, name = 'post-list'),
+    path('post/<id>/', views.detail, name = 'post-detail'),
+    path('search/', views.search, name = 'search'),
+    path('tinymce/', include('tinymce.urls')),
     path('', views.about, name='about')
 
     ]

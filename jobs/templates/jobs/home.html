@@ -4,19 +4,135 @@
 
   {% load static %}
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-compatible" content="ie=edge">
   <title>AIpointhomepage</title>
+  <meta name = "description" content = "This is to">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <!-- Fancybox-->
+  <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css"%}">
+
+  <link rel="stylesheet" href="{% static "css/fontastic.css" %}">
+  <link rel="stylesheet" href="{% static "css/home.css" %}">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <link rel="stylesheet" href="{% static "css/github.css" %}">
+
+
+
   <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
-  <link rel="stylesheet" href ="{% static "css/owl.carousel.min.css" %}">
+
+  <style media="screen">
+
+   featured-posts post-footer {
+    margin-top: 10px;
+  }
+
+  section.featured-posts .image {
+    max-height: 200px;
+    width: auto;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  section.featured-posts .image img {
+    height: 100%;
+  }
+
+  * {
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: 	#FFFFFF;
+}
+
+.card {
+  position: relative;
+  background:#FFFFFF ;
+  width: 400px;
+  height: 75vh;
+  border-radius: 6px;
+  padding: 2rem;
+  color: #333;
+  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+    0 0 1rem rgba(0,0,0,0.2);
+  overflow: hidden;
+
+  &__image-container {
+    margin: -2rem -2rem 1rem -2rem;
+  }
+
+  &__line {
+  opacity: 0;
+  animation: LineFadeIn .8s .8s forwards ease-in;
+  }
+
+  &__image {
+    opacity: 0;
+    animation: ImageFadeIn .8s 1.4s forwards;
+  }
+
+  &__title {
+    color: white;
+    margin-top: 0;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  &__content {
+    margin-top: -1rem;
+    opacity: 0;
+    animation: ContentFadeIn .8s 1.6s forwards;
+  }
+
+  &__svg {
+    position: absolute;
+    left: 0;
+    top: 115px;
+  }
+}
+
+@keyframes LineFadeIn {
+  0% { opacity: 0; d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 "); stroke: #fff; }
+  50% { opacity: 1; d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300"); stroke: #888BFF; }
+  100% { opacity: 1; d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400"); stroke: #545581; }
+}
+
+@keyframes ContentFadeIn {
+  0% { transform: translateY(-1rem); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes ImageFadeIn {
+  0% { transform: translate(-.5rem, -.5rem) scale(1.05); opacity: 0; filter: blur(2px); }
+  50% { opacity: 1; filter: blur(2px); }
+  100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
+}
+
+  </style>
+
+
+
+
+
+
 
 
 
@@ -28,7 +144,7 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="#">
-          <i class="fas fa-code-branch fa-3x mx-3"></i>
+          <img src="{% static "logo4.png" %}" alt="AIlogo">
 
           AIpoint</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,21 +157,16 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url "allblogs" %}">Blogs</a>
+              <a class="nav-link" href="{% url "post-list" %}">Blogs</a>
             </li>
-            <li class="nav-item dropdown">
-              <div class ="dropdown">
-                <a href = "#" class="nav-link">Graphics</a>
-                <div class="dropdown-content">
-                  <a href="#">Artificial Intelligence</a>
-                  <a href="#">Machine learning</a>
-                  <a href="#">Business Analyst</a>
 
-                </div>
-              </div>
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">our services</a>
+              <a class="nav-link" href="{% url "privacy" %}">Privacy Policy</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "ourservice" %}">our services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url "about" %}">About us</a>
@@ -73,7 +184,7 @@
               We are creating an enthusiasts
               for the future of AI.
             <p>
-            <button type = "button" class = "animated jackInTheBox delay-2s">Know About Us </button>
+            
           </div>
           <div class="col-md-5 col-sm-12 h-25">
             <img src="{% static "img-19.png" %}"  alt="AIpoint" class = "pic-one animated zoomIn delay-2s"/>
@@ -89,309 +200,92 @@
   </header>
 
 
-  <main>
 
+  <div class="container1">
 
-    <section>
-        <div class="blog">
-            <div class="container">
-                <div class="owl-carousel owl-theme blog-post">
-                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
-                        <img src="{% static "post-1.jpg" %}"  alt="post-1">
-                        <div class="blog-title">
-                            <h3>London Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                            <span>2 minutes</span>
-                        </div>
-                    </div>
-                    <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
-                        <img src="{% static "post-3.jpg" %}"  alt="post-1">
-                        <div class="blog-title">
-                            <h3>London Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                            <span>2 minutes</span>
-                        </div>
-                    </div>
-                    <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
-                        <img src="{% static "post-2.jpg" %}" alt="post-1">
-                        <div class="blog-title">
-                            <h3>London Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                            <span>2 minutes</span>
-                        </div>
-                    </div>
-                    <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
-                        <img src="{% static "post-5.jpg" %}"  alt="post-1">
-                        <div class="blog-title">
-                            <h3>London Fashion week's continued the evolution</h3>
-                            <button class="btn btn-blog">Fashion</button>
-                            <span>2 minutes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="owl-navigation">
-                    <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
-                    <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% for obj in object_list  %}
+  <div class="card">
+     <div class="card__image-container">
+       <a href="{{ obj.get_absolute_url }}">
+       <img class="card__image" src="{{ obj.thumbnail.url }}" alt=""></a>
+    </div>
+
+      <svg class="card__svg" viewBox="0 0 800 500">
+
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+      </svg>
+
+     <div class="card__content">
+       <a href="{{ obj.get_absolute_url }}">
+       <h1 class="card__title">{{ obj.title }}</h1></a>
+     <p>{{ obj.overview }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
 
 
-        <section class="container">
-            <div class="site-content">
-                <div class="posts">
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="{% static "blog1.png" %}" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
-                                <span>2 Commets</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
-                            </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="{% static "blog2.png" %}" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
-                                <span>7 Commets</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
-                            </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="{% static "blog3.png" %}" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 19, 2019</span>
-                                <span>5 Commets</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">New data recording system to better analyse road accidents</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                                adipisci iusto totam placeat corrupti ipsum, tempora magnam incidunt aperiam tenetur a
-                                nobis, voluptate, numquam architecto fugit. Eligendi quidem ipsam ducimus minus magni
-                                illum similique veniam tempore unde?
-                            </p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="pagination flex-row">
-                        <a href="#"><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class="pages">1</a>
-                        <a href="#" class="pages">2</a>
-                        <a href="#" class="pages">3</a>
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <aside class="sidebar">
-                    <div class="category">
-                        <h2>Category</h2>
-                        <ul class="category-list">
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                                <a href="#">Software</a>
-                                <span>(05)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
-                                <a href="#">Techonlogy</a>
-                                <span>(02)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="300">
-                                <a href="#">Lifestyle</a>
-                                <span>(07)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
-                                <a href="#">Shopping</a>
-                                <span>(01)</span>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
-                                <a href="#">Food</a>
-                                <span>(08)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="popular-post">
-                        <h2>Popular Post</h2>
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="200">
-                            <div class="post-image">
-                                <div>
-                                    <img src="./images/popular-post/m-blog-1.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
-                            <div class="post-image">
-                                <div>
-                                    <img src="./images/popular-post/m-blog-2.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="400">
-                            <div class="post-image">
-                                <div>
-                                    <img src="./images/popular-post/m-blog-3.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="500">
-                            <div class="post-image">
-                                <div>
-                                    <img src="./images/popular-post/m-blog-4.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
-                            <div class="post-image">
-                                <div>
-                                    <img src="./images/popular-post/m-blog-5.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="post-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300">
-                        <h2>Newsletter</h2>
-                        <div class="form-element">
-                            <input type="text" class="input-element" placeholder="Email">
-                            <button class="btn form-btn">Subscribe</button>
-                        </div>
-                    </div>
-                    <div class="popular-tags">
-                        <h2>Popular Tags</h2>
-                        <div class="tags flex-row">
-                            <span class="tag" data-aos="flip-up" data-aos-delay="100">Software</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="200">technology</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="300">travel</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="400">illustration</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="500">design</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="600">lifestyle</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="700">love</span>
-                            <span class="tag" data-aos="flip-up" data-aos-delay="800">project</span>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </section>
+  <!-- XXX:  -->
 
 
-	<div class="container-center">
-		<div class="btn-bar">
-			<div class="container-btn-prev">
-				<a class="btn prev" href="#myData" data-slide="prev">❮</a>
-			</div>
+<!-- Latest Posts -->
 
+<section class="latest-posts">
+  <div class="container">
+    <header>
+      <h2>Latest Posts</h2>
 
-
-
-
-			<!--Start Of the Carousel Cards-->
-
-
-
-
-			<div id="myData" class="carousel slide">
-				<div class="carousel-inner">
-
-
-
-
-					<!--ML-->
-
-
-
-					<div class="item active">
-						<div class="container-card-head">
-							<h2>Machine Learning</h2>
-						</div><br>
-						<div class="row">
-              {% for jobs in job.all%}
-							<div class="column">
-								<div class="card">
-									<img class="card-img-top" src="{{ jobs.Image.url }}" alt="Machine Learning" alt="First Lesson" style="width: 270px">
-									<div class="card-body">
-										<h4 class="card-title">First Lesson</h4>
-										<p class="card-text">{{ jobs.summary }}</p>
-										<a href="#" class="btn btn-primary stretched-link">Read More</a>
-									</div>
-								</div>
-							</div>
+    </header>
+    <div class="row">
+      {% for obj in latest %}
+      <div class="post col-md-4">
+        <div class="post-thumbnail"><a href="{{ obj.get_absolute_url }}"><img src="{{ obj.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+        <div class="post-details">
+          <div class="post-meta d-flex justify-content-between">
+            <div class="date">{{ obj.timestamp }}</div>
+            <div class="category">
+              {% for cat in obj.categories.all  %}
+              <a href="#">{{ cat.title }}</a>
               {% endfor %}
+            </div>
+          </div><a href="{{ obj.get_absolute_url }}">
+            <h3 class="h4">{{ obj.title }}</h3></a>
+          <p class="text-muted">{{ obj.overview }}</p>
+        </div>
+      </div>
+      {% endfor %}
 
 
-    </main>
+    </div>
+  </div>
+</section>
+<!-- Newsletter Section-->
+<section class="newsletter no-padding-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Subscribe to Newsletter</h2>
+        <p class="text-big">Join us by subscribing to our newsletter and stay connected with us.</p>
+      </div>
+      <div class="col-md-8">
+        <div class="form-holder">
+          <form action="." method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="email" name="email" id="email" placeholder="Type your email address">
+              <button type="submit" class="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
@@ -414,8 +308,10 @@
                         <p class="text-muted">Stay Updated</p>
                         <form class="form-inline">
                           <div class="col pl-0">
+                            <form action="." method="POST">
+                              {% csrf_token %}
                             <div class="input-group pr-5">
-                              <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                              <input type="email" class="form-control bg-dark text-white" placeholder="Email">
                               <div class="inpiut-group-prepend">
                                 <div class="input-group-text">
                                   <i class="fas fa-arrow-right"></i>
@@ -436,7 +332,7 @@
                         <div class="column">
                           <i class="fab fa-facebook-f"></i>
                           <i class="fab fa-instagram"></i>
-                          <i class="fab fa-twitter"></i>
+                          <i class="fab fa-twitter" href = ></i>
                           <i class="fab fa-youtube"></i>
 
                         </div>
@@ -460,20 +356,23 @@
 
 
 
-  </main>
+
 
 
       <!-- Jquery Library file -->
-      <script src="{ % static "./js/owl.carousel.min.js" % }"></script>
+
 
       <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
 
 
-      <script src="{ % static "./js/aos.js" % }"></script>
+      <script src="{ % static "./js/homepopper.js" % }"></script>
 
-      <script src="{% static "./js/main.js" % }"></script>
+
       <script src="{ % static "./js/fontawesome.js" % }"></script>
       <script src="{ % static "./js/bootstrap.min.js" % }"></script>
+      <script src="{ % static "./js/fancybox.min.js" % }"></script>
+      <script src="{ % static "./js/front.js" % }"></script>
+      <script src="{ % static "./js/jquery.cookie.js" % }"></script>
 
 
 
