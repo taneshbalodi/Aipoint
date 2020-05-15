@@ -26,8 +26,7 @@ django-tinymce==2.8.0
 django-tinymce4-lite==1.8.0
 django-utils==0.0.2
 dnspython==1.16.0
-entrypoints==0.3
-gast==0.2.2
+
 
 
 grpcio==1.22.0
@@ -100,5 +99,5 @@ virtualenvwrapper-win==1.2.5
 wcwidth==0.1.7
 
 wrapt==1.11.2
-wxPython==4.0.6
+
 xlrd==1.2.0
