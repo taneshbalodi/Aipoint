@@ -1,1 +1,1 @@
-web: gunicorn aipoint.wsgi
+web: gunicorn portfolio:app
