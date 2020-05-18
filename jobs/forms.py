@@ -1,13 +1,10 @@
 from django import forms
-from tinymce import TinyMCE
+
 from .models import posts , Comment
 from django.forms import ModelForm
 
 
 
-class TinyMCEWidget(TinyMCE):
-    def use_required_attribute(self, *args):
-        return false
 
 
 class PostForm(forms.ModelForm):
