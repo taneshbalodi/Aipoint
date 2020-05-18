@@ -58,7 +58,7 @@ def detail(request, id):
     category_count = get_category_count()
     most_recent = posts.objects.order_by('-timestamp')[:6]
     detail = get_object_or_404(posts , id=id)
-    forms = CommentForm(request.POST or None)
+
     if request.method == "POST":
         if forms.is_valid():
             forms.user = request.user
@@ -73,7 +73,7 @@ def detail(request, id):
 
     context = {
     'detail':detail,
-    'forms':forms,
+
     'most_recent' : most_recent ,
     'category_count': category_count
 
