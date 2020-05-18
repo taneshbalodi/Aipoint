@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import blog
 from jobs.models import posts
 from django.db.models import Count, Q
-from jobs.forms import CommentForm
+
 # Create your views here
 
 
