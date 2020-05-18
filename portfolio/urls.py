@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^about$', jobs.views.about, name='about'),
     url(r'^privacy$', jobs.views.privacy, name='privacy'),
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
-    path('tinymce/', include('tinymce.urls')),
+
     path(r'ckeditor', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
