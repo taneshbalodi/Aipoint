@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+   crossorigin="anonymous" />
 
   <link rel="stylesheet" href="{% static "css/style.css" %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -29,6 +31,10 @@
   <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
 
   <style media="screen">
+  @media only screen and (max-width: 768px) {
+  header .navbar-brand {
+    padding-left: 1rem;
+  }
 
    featured-posts post-footer {
     margin-top: 10px;
@@ -143,13 +149,14 @@ img {
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url "home" %}">
           <img src="{% static "logo4.png" %}" alt="AIlogo">
 
           AIpoint</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-align-right text-light"></i>
-        </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false"
+                   aria-label="Toggle navigation">
+                   <i class="fas fa-align-right text-light"></i>
+                 </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
@@ -201,29 +208,8 @@ img {
 
 
 
-  <div class="container1">
 
-    {% for obj in object_list  %}
-  <div class="card">
-     <div class="card__image-container">
-       <a href="{{ obj.get_absolute_url }}">
-       <img class="card__image" src="{{ obj.thumbnail.url }}" alt=""></a>
-    </div>
 
-      <svg class="card__svg" viewBox="0 0 800 500">
-
-        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
-        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
-      </svg>
-
-     <div class="card__content">
-       <a href="{{ obj.get_absolute_url }}">
-       <h1 class="card__title">{{ obj.title }}</h1></a>
-     <p>{{ obj.overview }}</p>
-    </div>
-  </div>
-  {% endfor %}
-</div>
 
 
 
@@ -360,6 +346,7 @@ img {
 
 
       <!-- Jquery Library file -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 
       <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
@@ -373,6 +360,15 @@ img {
       <script src="{ % static "./js/fancybox.min.js" % }"></script>
       <script src="{ % static "./js/front.js" % }"></script>
       <script src="{ % static "./js/jquery.cookie.js" % }"></script>
+      <script src="{ % static "./js/main.js" % }"></script>
+      <script src="{ % static "./js/st.js" % }"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
 
 
 

@@ -68,6 +68,16 @@
   background-color: #DDF;
   color: #000;
 }
+
+header img{
+height : 100px;
+width : 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  header .navbar-brand {
+    padding-left: 1rem;
+  }
 </style>
 
 
@@ -87,10 +97,11 @@
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="#">
-          <i class="fas fa-code-branch fa-3x mx-3"></i>
 
-          AIpoint</a>
+          <a class="navbar-brand" href="{% url "home" %}">
+            <img src="{% static "logo4.png" %}" alt="AIlogo">
+
+            AIpoint</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-align-right text-light"></i>
         </button>
@@ -147,6 +158,7 @@
                     <div class="comments meta-last"><i class="fa fa-comments"></i>{{ detail.comment_count}}</div>
                   </div>
                 </div>
+
                 <div class="post-body">
                   {{ detail.content | safe}}
 
@@ -172,6 +184,8 @@
                   </a>
                   {% endif %}
                   </div>
+
+
 
 
 
@@ -238,6 +252,38 @@
       </div>
     </div>
     <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <div class="container">
+  		<div class="container-fluid">
+  			<div class="row">
+  				<div class="card bg-light col-sm-8">
+  					<div class="card-body row">
+  						<img src="https://analyticssteps.com/backend/media/profile_pic/4992835/497042_1568265385_tanesh.jpeg" class="profile-pic rounded-circle col-sm-3">
+  						<div class="col-sm-8 w-100">
+  							<h3 class="card-title font-weight-bold"><a href="#" class="text-dark">Tanesh Balodi</a></h3>
+  							<p class="card-text text-secondary">A splendid and inventive Machine Learning Intern in Aipoint. He loves deploying data in ML and finds out different insights to play with industry trends.</p>
+  						</div>
+  						<div class="col-sm-1">
+  							<div class="float-left p-1">
+  									<a href="https://www.linkedin.com/in/tanesh-balodi-70bbab17a">
+  										<img src="https://www.analyticssteps.com/assets/images/author/linkedin.png" class="rounded-circle">
+  									</a>
+  							</div>
+
+  							<div class="float-left p-1">
+  								<a href="">
+  									<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.Vr8DfHIHQWd3rUGnO20uOgHaHa%26pid%3DApi&f=1" class="rounded-circle" style="width: 28px;height: 28px;">
+  								</a>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+<br>
+<br>
+
     <!-- Page Footer-->
     <footer>
       <div class="container-fluid p-0">
@@ -311,11 +357,13 @@
 
 
     <!-- JavaScript files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <script src="js/front.js"></script>
     <script src="js/st.js"></script>
