@@ -205,35 +205,7 @@ img {
     </div>
 
   </header>
-  <div class="container">
-		<div class="container-fluid row">
-			<div id="posts" class="carousel slide col-sm-10" data-ride="carousel">
-
-				<!--CAROUSEL-->
-
-				<div class="carousel-inner">
-          {% for obj in object_list %}
-					<div class="carousel-item active">
-						<div class="card bg-light ">
-							<div class="card-body">
-								<img src="{{ obj.thumbnail.url }}"  class="w-100" >
-								<h2 class="card-title font-weight-bold"><a href="{{ obj.get_absolute_url }}" class="text-dark">{{ obj.title }}</a></h2>
-								<p class="card-text text-secondary">{{ obj.overview }}</p>
-							</div>
-						</div>
-					</div>
-          {% endfor %}
-        </div>
-          <a class="carousel-control-prev" href="{{ get_absolute_url }}" data-slide="prev">
-        <span class="fas fa-chevron-circle-left" style="color: black;"></span>
-      </a>
-      <a class="carousel-control-next" href="{{ get_absolute_url }}" data-slide="next">
-        <span class="fas fa-chevron-circle-right" style="color: black;"></span>
-      </a>
-
-    </div>
-  </div>
-</div>
+  
 
 
 
