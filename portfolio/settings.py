@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'marketing.apps.MarketingConfig',
+    'boto3',
 
 
     'django.contrib.admin',
