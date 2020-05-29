@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'marketing.apps.MarketingConfig',
-    
+
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,20 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+
+
+#s3 Configuration
+AWS_ACCESS_KEY_ID = "AKIAIEN2I6OKZQQC22FQ"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "aipoint"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
 
 
 
