@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   {% load static %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-compatible" content="ie=edge">
-  <title>AIpoint</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static "css/about.css" %}">
-  <link rel="stylesheet" href="{% static "css/aboutmobile.css" %}">
 
-  <style>
-    header img{
-    height : 100px;
-    width : 100px;
-  }
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  header .row .col-md-5 img{
-    width:140%;
-    height: 110%;
-
-
-  }
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	    <!-- Font Awesome -->
+	    <script src="https://kit.fontawesome.com/dc712985e0.js" crossorigin="anonymous"></script>
+	    <!-- Stylesheet -->
+	    <link rel="stylesheet" type="text/css" href="{% static "css/aboutmobile.css" %}">
 
 
 
-  </style>
-
-
-
-
+	<title>Our Team</title>
 </head>
 <body>
-
-  <header>
-    <div class="container-fluid p-0">
-      <nav class="navbar navbar-expand-lg ">
+<div class="container">
+	<nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand" href="{% url "home" %}">
-          <img src="{% static "logo4.png" %}" class = "logo" alt="AIlogo">
-          AIpoint</a>
+          <img src="{% static "logo4.png" %}" class="logo" alt="AIlogo">
+         <label><h5>Aipoint</h5></label>
+     	</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-align-right text-light"></i>
+
+
+
+     	<div class="search" type="button">
+        	<div>
+       			<input type="text" placeholder="Search... ">
+       		</div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none;">
+        <i class="fas fa-align-right text-light" aria-hidden="true"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
@@ -59,187 +52,163 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">our services</a>
+              <a class="nav-link" href="{% url "ourservice" %}">our services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url "about" %}">About us</a>
             </li>
           </ul>
         </div>
-      </nav>
-      <div class = "container text-center">
-        <div class="row">
-          <div class="col-md-7 col-sm-12">
-            <h6> AIpoint is here!</h6>
-            <h1>Exciting Adventure</h1>
-            <p>Welcome to the AI AIpoint,
-              we are creating an enthusiasts
-              for future of AI
-            </p>
-            <button class="btn btn-light px-5 py-2">Buy now for $5.99</button>
-          </div>
-          <div class="col-md-5 col-sm-12 h-25">
-            <img src="{% static "img-18.png" %}" alt="AIpoint"/>
-          </div>
-        </div>
 
 
-      </div>
+    </nav>
+</div>
 
 
-    </div>
+<div class="container-fluid mb-5">
+	<div class="ourTeam">
+		<h1>Our Team</h1>
+	</div>
+	<div class="row" id="myDiv">
+		<div class="col-md-4 text-center">
+			<div id="taneshBalodi">
+				<div class="profilePicture">
+					<img src="{% static "tanesh1.jpg" %}">
+				</div>
+				<h3>Tanesh Balodi</h3>
+				<h6>Founder of Aipoint</h6>
+				<div class="icons">
+					<a href="">
+						<i class="fab fa-facebook" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-linkedin" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-twitter" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-instagram" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+					</a>
+				</div>
+				<p style="font-size: 12px;">Tanesh Balodi is an inventive web developer with machine learning skills, he is a founder of Aipoint and we very highly value him.</p>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div id="sarojPrasad">
+				<div class="profilePicture">
+					<img src="{% static "saroj.jpg" %}">
+				</div>
+				<h3>Saroj Prasad</h3>
+				<h6>Developer</h6>
+				<div class="icons">
+					<a href="">
+						<i class="fab fa-facebook" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-linkedin" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-twitter" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-instagram" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+					</a>
+				</div>
+				<p style="font-size: 12px;">Saroj Prasad is a creative frontend web developer, he is a lead frontend web developer at Aipoint and we very highly value him.</p>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div id="taneshBalodi">
+				<div class="profilePicture">
+					<img src="{% static "img-22.JPG" %}">
+				</div>
+				<h3>Ms. Vaishnavi Balodi</h3>
+				<h6>Lead Graphic Designer at Aipoint</h6>
+				<div class="icons">
+					<a href="">
+						<i class="fab fa-facebook" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-linkedin" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-twitter" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-instagram" style="font-size: 30px;"></i>
+					</a>
+					<a href="">
+						<i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+					</a>
+				</div>
+				<p style="font-size: 12px;">Vaishnavi Balodi is a splendid graphic designer at Aipoint, she is a lead graphic designer at AI- point and we very highly value her.</p>
+			</div>
+		</div>
+	</div>
+</div>
 
-  </header>
-
-  <main>
-    <section class = "section-1">
-
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="pray">
-              <img src="{% static "tanesh.jpg" %}" alt="pray">
-            </div>
-          </div>
-              <div class="col-md-6">
-                <div class="panel text-left">
-                  <h1>Mr. Tanesh Balodi</h1>
-                  <h5>Founder of AIpoint</h5>
-                  <p class="pt-4">
-                    Tanesh Balodi is an inventive we developer
-                    which is also renowned for his machine learning
-                    skills, he is a founder of AI- point and we very
-                    highly value him.
-                  </p>
-                  <p>
-                    He has previously worked with the analytic steps,
-                    and proven his worth as an inventive and splendid
-                    machine learning intern. He has written various
-                    research papers on deep learning and natural
-                    language processing.
-
-                  </div>
-
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-      </section>
-
-
-      <section class = "section-5">
-
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="pray">
-                <img src="{% static "img-22.jpg" %}" alt="pray">
-              </div>
-            </div>
-                <div class="col-md-6">
-                  <div class="panel text-left">
-                    <h1>Ms. Vaishnavi Balodi</h1>
-                    <h5>Lead Graphic Designer at AIpoint</h5>
-                    <p class="pt-4">
-                      Vaishnavi Balodi is an inventive graphic developer
-                      which is also renowned for her communication skills
-                      , she is a lead graphic designer at AI- point and we very
-                      highly value her.
-                    </p>
-                    <p>
-                      He has previously worked with the analytic steps,
-                      and proven his worth as an inventive and splendid
-                      machine learning intern. He has written various
-                      research papers on deep learning and natural
-                      language processing.
-
-                    </div>
-
-
-                  </div>
-
-                </div>
-
-              </div>
-
-
-        </section>
-
-
-
-
-
-
-
-
-
-            </main>
-
-            <footer>
-              <div class="container-fluid p-0">
-                <div class="row text-left">
-                  <div class="col-md-5 col-md-5">
-                    <h1 class=text-light>About Us</h1>
-                    <p class="text-muted">
-                      In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.
-                    </p>
-                    <p class="text-muted pt-4">
-                      Copyright @2020 All rights reserved by
-                      <span> AIpoint </span>
-
-                    </p>
-                  </div>
-                  <div class="col-md-5">
-                    <h4 class="text-light">Newsletter</h4>
-                    <p class="text-muted">Stay Updated</p>
-                    <form class="form-inline">
-                      <div class="col pl-0">
-                        <div class="input-group pr-5">
-                          <input type="text" class="form-control bg-dark text-white" placeholder="Email">
-                          <div class="inpiut-group-prepend">
-                            <div class="input-group-text">
-                              <i class="fas fa-arrow-right"></i>
-
-                            </div>
-
-                          </div>
-
-                        </div>
-
-                      </div>
-
-                    </form>
-                  </div>
-                  <div class="col-md-2 col-sm-12">
-                    <h4 class="text-light">Follow Us</h4>
-                    <p class="text-muted">Go social with us</p>
-                    <div class="column">
-                      <i class="fab fa-facebook-f"></i>
-                      <i class="fab fa-instagram"></i>
-                      <i class="fab fa-twitter"></i>
-                      <i class="fab fa-youtube"></i>
-
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
+<footer>
+	<div class="container-fluid p-0">
+		<div class="row text-left">
+			<div class="col-md-5">
+				<h1 class="text-light">About us</h1>
+				<p>In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.</p>
+				<br>
+				<p>Copyright @2020 All rights reserved by <span class="aipointFooter">AIpoint</span></p>
+			</div>
+			<div class="col-md-5 mb-4">
+				<h4 class="text-light">
+					News Letter
+				</h4>
+				<p>Stay Updated</p>
+				<div class="newsLetter">
+        			<div class="input-group">
+                <form action="." method="POST">
+                  {% csrf_token %}
+       					<input class="form-control" type="text" placeholder="Email... ">
+       					<div class="input-group-append bg-transparent">
+	       					<span class="input-group-text bg-light">
+	       						<button class="btn">
+	       							<i class="fa fa-arrow-right"></i>
+	       						</button>
+	       					</span>
+       					</div>
+       				</div>
+        		</div>
+			</div>
+			<div class="col-md-2">
+				<h4 class="text-light">Follow us</h4>
+				<p>Go social with us</p>
+				<div class="row">
+					<a class="col aipointFooter" href="#">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a class="col aipointFooter" href="#">
+						<i class="fa fa-instagram"></i>
+					</a>
+					<a class="col aipointFooter" href="#">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="col aipointFooter" href="#">
+						<i class="fa fa-youtube"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 
 
 
-            </footer>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-
-
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-          </body>
-          </html>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
