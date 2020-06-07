@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import django_heroku
+import cloudinary
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,7 @@ SECRET_KEY = 'rclqxj*(z1hyq_og^cg-a!jozo14=n$t0mjm)2aq3x$wp9x-6z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['167.71.228.242']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'marketing.apps.MarketingConfig',
     'boto3',
+    'cloudinary',
 
 
     'django.contrib.admin',
@@ -136,14 +138,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 
-
-#s3 Configuration
-AWS_ACCESS_KEY_ID = "AKIAIEN2I6OKZQQC22FQ"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "aipoint"
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#add config
+cloudinary.config(
+  cloud_name = os.environ.get('CLOUD_NAME'),
+  api_key = os.environ.get('645797566536238'),
+  api_secret = os.environ.get('R0OWPvVrB0lxG1lB8x2x2x4porg'),
+  secure = True
+)
 
 
 
