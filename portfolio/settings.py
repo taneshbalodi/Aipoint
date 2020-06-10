@@ -26,7 +26,7 @@ SECRET_KEY = 'rclqxj*(z1hyq_og^cg-a!jozo14=n$t0mjm)2aq3x$wp9x-6z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['167.71.228.242']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -143,11 +143,23 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-STATIC_URL = '/static/'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
+AWS_ACCESS_KEY_ID = 'AKIA2KBSW5DKTCNLFHEA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME ='aipoint3'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #add config
 cloudinary.config(

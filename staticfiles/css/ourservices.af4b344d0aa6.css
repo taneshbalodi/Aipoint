@@ -1,0 +1,62 @@
+body
+{
+	background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+	background-size: cover;
+	background-position: center;
+	color: #fff !important;
+}
+.sevices
+{
+	margin: 60px auto;
+	text-align: center;
+}
+h1
+{
+	font-family: sans-serif;
+	letter-spacing: 1px;
+}
+h1:after
+{
+	content: '';
+	background: white;
+	display: block;
+	width: 200px;
+	height: 3px;
+	margin: 10px auto;
+	border-radius: 25%;
+}
+.icon
+{
+	font-size: 40px;
+	margin: 20px auto;
+	padding: 10px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+
+.col-md-4:hover
+{
+	cursor: pointer;
+}
+.contactUs
+{
+	margin: 30px auto;
+}
+
+.contactUs a
+{
+	text-decoration: none;
+	color: #fff;
+	transition: all 0.5s;
+}
+.contactUs a:hover
+{
+	content: '';
+	text-decoration: none;
+}
+hr
+{
+	margin: 50px auto 0 auto;
+}

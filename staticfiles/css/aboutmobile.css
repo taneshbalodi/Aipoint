@@ -1,0 +1,160 @@
+
+
+body
+{
+	font-family: Verdana;
+	background-image: linear-gradient(to bottom, #0CBABA, #380036);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #fff !important;
+}
+.navbar-brand img
+{
+	width: 100px;
+	height: 100px;
+}
+.navbar-brand h5
+{
+	color: #212529;
+}
+nav ul li a
+{
+	margin: auto 10px;
+	color: #fff;
+	transition: all 0.1s;
+}
+nav ul li a:hover
+{
+	color: #212529;
+}
+nav ul li a .btn
+{
+	padding: 0;
+	margin: 0;
+}
+
+.ourTeam
+{
+	margin: 0 auto 50px auto;
+	text-align: center;
+}
+.ourTeam h1
+{
+	font-family: Candara;
+}
+.ourTeam h1:after
+{
+	content: '';
+	background: white;
+	display: block;
+	width: 100px;
+	height: 3px;
+	margin: auto;
+	border-radius: 50%;
+}
+
+.profilePicture img
+{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin: 10px;
+}
+.icons
+{
+	display: inline-block;
+	margin: 15px auto;
+}
+.icons a
+{
+	text-decoration: none;
+	color: #fff;
+	margin: 10px;
+}
+
+
+.search div
+{
+  display: inline-block;
+  position: relative;
+}
+.search div input
+{
+  color: white;
+  width: 100px;
+  font-size: 16px;
+  background: transparent;
+  padding: 10px;
+  border: solid 3px white;
+  border-radius: 35px;
+  outline: none;
+}
+
+.search div input::placeholder
+{
+  color: #efefef;
+  opacity: 1;
+}
+
+
+.search div input:focus,.search div input:valid
+{
+  width: 100px;
+}
+
+footer
+{
+	padding: 14vmin 18vmin;
+    background-color: #212529;
+    color: gray;
+    text-align: left;
+}
+footer .aipointFooter
+{
+	color: #20B2AA;
+}
+
+.newsLetter form
+{
+  display: inline-flex;
+  position: relative;
+}
+.newsLetter .input-group
+{
+	width: 80%;
+}
+.newsLetter form input
+{
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  width: 80%;
+  padding: 10px;
+  border: solid 1px white;
+  border-bottom-left-radius: 35px;
+  border-top-left-radius: 35px;
+  outline: none;
+  z-index: 0;
+  float: left;
+}
+.newsLetter form input:valid,.newsLetter form input:focus
+{
+	outline: none;
+	background: transparent;
+	color: white;
+}
+
+.newsLetter form input::placeholder
+{
+  color: #efefef;
+  opacity: 1;
+}
+
+.newsLetter span
+{
+	background: transparent;
+	height: 38px;
+	border-bottom-right-radius: 35px;
+	border-top-right-radius: 35px;
+}
