@@ -140,11 +140,45 @@ img {
   50% { opacity: 1; filter: blur(2px); }
   100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
 }
-.nav-link .search-input
-{
-	border: none;
-	border-bottom: 1px solid #6c757d;
+.diplay-3 .featured-posts image {
+ max-height: 200px;
+ width: 200px;
+ overflow: hidden;
+ padding: 0;
 }
+
+.row .col-md-6 .card img,.row .col-md-3 .card img
+{
+   height: 400px;
+   width: 100%;
+}
+.row .col-md-3 .v-align .card img
+{
+   height: 200px;
+   width: 100%;
+   padding: 2px 0;
+}
+.col-md-6,.col-md-3
+{
+   padding: 2px;
+}
+
+.row .col-md-6 .card .card-img-overlay, .row .col-md-3 .card .c-i-o
+{
+   top: 210px;
+}
+.row .col-md-3 .v-align .card .card-img-overlay
+{
+   top: 10px;
+}
+
+#secondGrid .col-md-6 .card .new-card,#secondGrid .col-md-3 .card .new-card
+{
+   width: 100%;
+   height: 200px;
+}
+
+
 
 
   </style>
@@ -269,6 +303,101 @@ img {
     </div>
   </div>
 </section>
+
+    <div class="container">
+
+          <div class="header mt-3 d-none d-sm-block">
+              <h1 class="diplay-3">Featured Post</h1>
+          </div>
+          <div class="row">
+              <a href="https://aipoint.herokuapp.com/blog/post/11/" class="col-md-6 d-none d-sm-block">
+                  <div class="card">
+                      <img src="https://aipoint3.s3.amazonaws.com/static/images/pandas.jpeg">
+                      <div class="card-img-overlay">
+                          <h6 class="text-muted card-text">13/06/2020</h6>
+                          <hr>
+                          <h2 class="card-title">Python Pandas for Machine Learning</h2>
+
+                      </div>
+                  </div>
+              </a>
+              <a href="https://aipoint.herokuapp.com/blog/post/5/" class="col-md-3 d-none d-sm-block">
+                  <div class="card">
+                      <img src="https://aipoint3.s3.amazonaws.com/static/images/pexels-photo-1181671.jpeg">
+                      <div class="card-img-overlay c-i-o">
+                          <h6 class="text-muted card-text">28/05/2020</h6>
+                          <hr>
+                          <h2 class="card-title">Working Of Keras Functional API</h2>
+
+                      </div>
+                  </div>
+              </a>
+              <div class="col-md-3 d-none d-sm-block">
+                  <div class="v-align">
+                      <a href="https://aipoint.herokuapp.com/blog/post/4/" class="card">
+                          <img src="https://aipoint3.s3.amazonaws.com/static/images/AI3.jpeg">
+                          <div class="card-img-overlay align-self-end">
+                              <h6 class="text-muted card-text">28/05/2020</h6>
+                              <hr>
+                              <h2 class="card-title">Bag of Words</h2>
+
+                          </div>
+                      </a>
+
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="header mt-5">
+              <h1 class="diplay-3">Most Loved</h1>
+          </div>
+
+          <div class="row mt-0 mb-5" id="secondGrid">
+              <a href="https://aipoint.herokuapp.com/blog/post/1/" class="col-md-3 pl-1 pr-1 mb-2">
+                  <div class="card">
+                      <img class="new-card" src="https://aipoint3.s3.amazonaws.com/static/images/google_bert.jpeg">
+                      <div class="card-body mb-0">
+                          <h5 class="card-title mb-0">Fundamentals of Google BERT and Transformers</h5>
+
+                      </div>
+                  </div>
+              </a>
+              <a href="https://aipoint.herokuapp.com/blog/post/6/" class="col-md-3 pl-1 pr-1 mb-2">
+                  <div class="card">
+                      <img class="new-card" src="https://aipoint3.s3.amazonaws.com/static/images/gradient_descent.jpeg">
+                      <div class="card-body mb-0">
+                          <h5 class="card-title mb-0">Mathematics behind Gradient Descent Approach</h5>
+
+                      </div>
+                  </div>
+              </a>
+              <a href="https://aipoint.herokuapp.com/blog/post/3/" class="col-md-3 pl-1 pr-1 mb-2">
+                  <div class="card">
+                      <img class="new-card" src="https://aipoint3.s3.amazonaws.com/static/images/AI4.jpeg">
+                      <div class="card-body mb-0">
+                          <h5 class="card-title mb-0">Difference Between Supervised and Unsupervised Learning</h5>
+
+                      </div>
+                  </div>
+              </a>
+              <a href="https://aipoint.herokuapp.com/blog/post/2/" class="col-md-3 pl-1 pr-1 mb-2">
+                  <div class="card">
+                      <img class="new-card" src="https://aipoint3.s3.amazonaws.com/static/images/AI2.jpeg">
+                      <div class="card-body mb-0">
+                          <h5 class="card-title mb-0">Fundamentals Of General Adversarial Network(GAN's)</h5>
+
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+
+
+      </div>
+
+
+
 <!-- Newsletter Section-->
 <section class="newsletter no-padding-top">
   <div class="container">
