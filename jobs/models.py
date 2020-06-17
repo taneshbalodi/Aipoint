@@ -45,7 +45,7 @@ class posts(models.Model):
     featured = models.BooleanField()
     previous_post = models.ForeignKey('self', related_name = 'previous' ,on_delete = models.SET_NULL, blank = True, null = True)
     next_post = models.ForeignKey('self', related_name = 'next' , on_delete = models.SET_NULL, blank = True, null = True)
-    slug = models.SlugField(max_length = 250, null = True, blank = True) 
+    
 
 
 
