@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'marketing.apps.MarketingConfig',
     'boto3',
     'cloudinary',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+
 
 
     'django.contrib.admin',
@@ -49,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

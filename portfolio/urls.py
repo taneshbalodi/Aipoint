@@ -22,6 +22,9 @@ import jobs.views
 from django.conf.urls import url, include
 
 
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
@@ -31,6 +34,7 @@ urlpatterns = [
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
 
     path(r'ckeditor', include('ckeditor_uploader.urls')),
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 if settings.DEBUG:
