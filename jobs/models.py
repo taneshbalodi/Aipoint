@@ -42,7 +42,7 @@ class posts(models.Model):
     comment_count = models.IntegerField(default=0)
     view_count = models.IntegerField(default=0)
     content = RichTextField(default=True)
-    slug = models.SlugField(max_length = 250, null = True, blank = True)
+    
 
     author = models.ForeignKey(Author, blank=True, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to="images/", blank=True )

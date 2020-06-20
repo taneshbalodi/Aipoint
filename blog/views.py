@@ -54,16 +54,10 @@ def allblogs(request):
 
     return render(request,'blog/allblogs.html',  context)
 
-def detail(request, slug):
+def detail(request, id):
     category_count = get_category_count()
     most_recent = posts.objects.order_by('-timestamp')[:6]
-    detail = posts.objects.filter(slug=slug)
-    if detail.exists():
-        detail = detail.first()
-    else:
-        return HttpResponse(" Page Not Found")
-
-
+    detail = get_object_or_404(posts , id=slug)
 
     if request.method == "POST":
         if forms.is_valid():
