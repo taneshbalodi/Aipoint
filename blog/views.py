@@ -57,7 +57,7 @@ def allblogs(request):
 def detail(request, id):
     category_count = get_category_count()
     most_recent = posts.objects.order_by('-timestamp')[:6]
-    detail = get_object_or_404(posts , id=slug)
+    detail = get_object_or_404(posts , id=id)
 
     if request.method == "POST":
         if forms.is_valid():
