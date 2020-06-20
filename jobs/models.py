@@ -4,6 +4,10 @@ from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 from ckeditor.fields import RichTextField
+from django.db.models.signals import pre_save
+from jobs.utils import unique_slug_generator
+
+
 
 
 User = get_user_model()
@@ -38,6 +42,7 @@ class posts(models.Model):
     comment_count = models.IntegerField(default=0)
     view_count = models.IntegerField(default=0)
     content = RichTextField(default=True)
+    slug = models.SlugField(max_length = 250, null = True, blank = True)
 
     author = models.ForeignKey(Author, blank=True, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to="images/", blank=True )
@@ -45,7 +50,7 @@ class posts(models.Model):
     featured = models.BooleanField()
     previous_post = models.ForeignKey('self', related_name = 'previous' ,on_delete = models.SET_NULL, blank = True, null = True)
     next_post = models.ForeignKey('self', related_name = 'next' , on_delete = models.SET_NULL, blank = True, null = True)
-    
+
 
 
 
@@ -59,10 +64,15 @@ class posts(models.Model):
         'id': self.id
         })
 
+def slug_generator(sender, instance, *args, **kwargs):
+        if not instance.slug:
+            instance.slug = unique_slug_generator(instance)
 
-    @property
-    def get_comments(self):
-        return self.comments.all().order_by('-timestamp')
+pre_save.connect(slug_generator, sender=posts)
+
+
+
+
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete= models.CASCADE , blank=True, null=True)
