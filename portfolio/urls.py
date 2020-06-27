@@ -20,6 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
 from django.conf.urls import url, include
+from blog.sitemaps import PostSitemap
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'posts': PostSitemap
+
+}
 
 
 
@@ -29,6 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
     path('blog/', include('blog.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
     url(r'^about$', jobs.views.about, name='about'),
     url(r'^privacy$', jobs.views.privacy, name='privacy'),
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
