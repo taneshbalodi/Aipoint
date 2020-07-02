@@ -18,10 +18,12 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<!-- Fancybox-->
 	<link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
+  <link rel="shortcut icon" type="image/png" href="static/favicon.png">
 
 	<link rel="stylesheet" href="{% static "css/home.css" %}">
 	<link rel="shortcut icon" href="favicon.png">
   <script type="text/javascript" src="{% static "js/tiny_mce/tiny_mce.js" %}"></script>
+  <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
 
 <!--Tinymce Text-Editor (Must be in Head Tag) -->
   <script src="{% static '.\js\tinymce.js' %}"></script>
@@ -84,15 +86,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url "about" %}">About us</a>
             </li>
-            <li class="nav-item">
-              <form action="{% url 'search' %}" class="search-form">
-                <div class="form-group">
-                  <input type="search" placeholder="What are you looking for?">
-                  <button type="submit" class="submit"><i class="fa fa-search"></i></button>
-                </div>
-              </form>
 
-    </li>
 
 
 
@@ -116,7 +110,7 @@
                   <div class="post-meta d-flex justify-content-between">
                     <!-- <div class="date meta-last">20 May | 2016</div> -->
                     {% for cat in  post.categories.all %}
-                    <div class="category"><a href="#">{{ cat.title }}</a></div>
+                    <div class="category"><a href="{{ post.get_absolute_url }}">{{ cat.title }}</a></div>
                     {% endfor %}
                   </div><a href="{{ post.get_absolute_url }}">
                     <h3 class="h4">{{ post.title }}</h3></a>
@@ -158,6 +152,7 @@
   {% endif %}
 </div>
 </main>
+
         <aside class="col-lg-4">
           <!-- Widget [Search Bar Widget]-->
           <div class="widget search">
@@ -212,6 +207,9 @@
         </aside>
       </div>
     </div>
+
+
+
     <!-- Page Footer-->
 
                     <footer>
