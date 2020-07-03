@@ -22,6 +22,7 @@ import jobs.views
 from django.conf.urls import url, include
 from blog.sitemaps import PostSitemap
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import TemplateView
 
 sitemaps = {
     'posts': PostSitemap
@@ -35,6 +36,8 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
+    url(r'^robots$', jobs.views.robots, name = 'robots'),
+
     path('blog/', include('blog.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
     url(r'^about$', jobs.views.about, name='about'),
@@ -42,6 +45,7 @@ urlpatterns = [
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
 
     path(r'ckeditor', include('ckeditor_uploader.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

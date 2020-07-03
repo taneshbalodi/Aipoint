@@ -32,3 +32,6 @@ def ourservice(request):
 
 def privacy(request):
     return render(request, 'jobs/privacy.html', {})
+
+def robots(request):
+    return render(request, 'jobs/robots.txt', {})

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    
+
+
 
 
 
@@ -186,15 +187,19 @@ cloudinary.config(
 
 
 
-
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL ,'./js/jquery3.4.1.min.js' )
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
+        'extraPlugins': 'codesnippet'
+
+
+
     },
 }
 
