@@ -15,9 +15,14 @@
   <script src="https://kit.fontawesome.com/7ef5507d5f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
    crossorigin="anonymous" />
+   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 
   <link rel="stylesheet" href="{% static "css/style.css" %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <!-- Fancybox-->
   <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css"%}">
 
@@ -25,7 +30,7 @@
   <link rel="stylesheet" href="{% static "css/home.css" %}">
 
 
-  <link rel="stylesheet" href="{% static "css/github.css" %}">
+
   <link rel="shortcut icon" type="image/png" href="static/favicon.png">
 
 
@@ -302,59 +307,69 @@
 
 
 <footer>
-  <div class="container-fluid p-0">
-    <div class="row text-left">
-      <div class="col-md-5 col-md-5">
-        <h1 class=text-light>About Us</h1>
-        <p class="text-muted">
-          In AIpoint we wish to create enthusiasts in the promising field of Artificial Intelligence.
-        </p>
-        <p class="text-muted pt-4">
-          Copyright @2020 All rights reserved by
-          <span> AIpoint </span>
-
-        </p>
+<section class="py-2 bg-dark text-light">
+  <div class="row p-5 w-100">
+    <div class="col-sm-7">
+      <p class="display-4"><span class="text-default">Ai</span>Point</p>
+      <p class="mt-2">In AiPoint we wish to create enthusiasts in the promising field of <span class="text-default">Artificial Inteligence</span></p>
+      <h4>Subscribe to our newsletter</h4>
+      <p class="mb-0 text-default">Stay updated</p>
+      <form class="form-inline">
+        <div class="form-group">
+        <input type="email" name="Email" placeholder="Email" class="form-control">
+        <button type="submit" class="btn btn-md btn-default"><i class="fa fa-arrow-right"></i></button>
       </div>
-      <div class="col-md-5">
-        <h4 class="text-light">Newsletter</h4>
-        <p class="text-muted">Stay Updated</p>
-        <form class="form-inline">
-          <div class="col pl-0">
-            <div class="input-group pr-5">
-              <input type="text" class="form-control bg-dark text-white" placeholder="Email">
-              <div class="inpiut-group-prepend">
-                <div class="input-group-text">
-                  <i class="fas fa-arrow-right"></i>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </form>
-      </div>
-      <div class="col-md-2 col-sm-12">
-        <h4 class="text-light">Follow Us</h4>
-        <p class="text-muted">Go social with us</p>
-        <div class="column">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-youtube"></i>
-
-        </div>
-      </div>
+      </form>
 
     </div>
-
+    <div class="col-sm-3">
+      <h2 class="pt-4 pb-2">About us</h2>
+      <ul class="list-inline">
+        <li class="my-2">
+          <a href="{% url "ourservice" %}" class="text-default">Our services</a>
+        </li>
+        <li class="my-2">
+          <a href="{% url "about" %}" class="text-default">Our team</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h2 class="pt-4 pb-2">Follow us</h2>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://www.facebook.com/ai.point.2k20/" class="text-default" target="_blank"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://twitter.com/IpointA" class="text-default" target="_blank"><i class="fab fa-twitter"></i></a>
+        </li><!--
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-linkedin"></i></a>
+        </li> -->
+        <li class="list-inline-item">
+          <a href="https://instagram.com/ai.point" class="text-default" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li><!--
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-reddit"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-discord"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-telegram"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-whatsapp"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class="text-default"><i class="fab fa-google-plus"></i></a>
+        </li> -->
+      </ul>
+    </div>
   </div>
-
-
-
+</section>
+<h5 class="text-center my-3">Copyright &copy; 2020 All rights reserved by <a href="#" class="text-default">AiPoint</a></h5>
 </footer>
+
 
 
 
@@ -375,7 +390,7 @@
       		      <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
 
 
-      		      <script src="{ % static "./js/homepopper.js" % }"></script>
+      		    
 
 
       		      <script src="{ % static "./js/fontawesome.js" % }"></script>
@@ -388,13 +403,14 @@
 
 
       <script async src="https://static.addtoany.com/menu/page.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 
 
