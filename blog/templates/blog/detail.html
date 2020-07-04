@@ -149,7 +149,7 @@ width : 100px;
                 </div>
                 <h1>{{ detail.title }}<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="{{ detail.author.profile_picture.url }}" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="{{ detail.author.profile_picture.url }}" alt="..." meta property="og:image" content="{{ detail.author.profile_picture.url }}" class="img-fluid"></div>
                     <div class="title"><span>{{ detail.author.user.username}}</span></div></a>
                   <div class="d-flex align-items-center flex-wrap">
                     <div class="date"><i class="fa fa-clock-o"></i>{{ detail.timestamp|timesince}} ago</div>
