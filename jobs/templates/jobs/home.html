@@ -230,6 +230,7 @@
 
 
 
+
           <div class="header mt-5">
               <h1 class="diplay-3">Most Loved</h1>
           </div>
@@ -273,6 +274,8 @@
               </a>
           </div>
 
+      </div>
+
 
 
 
@@ -314,9 +317,10 @@
       <p class="mt-2">In AiPoint we wish to create enthusiasts in the promising field of <span class="text-default">Artificial Inteligence</span></p>
       <h4>Subscribe to our newsletter</h4>
       <p class="mb-0 text-default">Stay updated</p>
-      <form class="form-inline">
+      <form action="." method="POST">
+        {% csrf_token %}
         <div class="form-group">
-        <input type="email" name="Email" placeholder="Email" class="form-control">
+        <input type="email" name="email" placeholder="Type yout email address" class="form-control">
         <button type="submit" class="btn btn-md btn-default"><i class="fa fa-arrow-right"></i></button>
       </div>
       </form>
@@ -390,7 +394,7 @@
       		      <script src="{ % static "./js/jquery3.4.1.min.js" % }"></script>
 
 
-      		    
+
 
 
       		      <script src="{ % static "./js/fontawesome.js" % }"></script>
