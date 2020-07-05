@@ -58,7 +58,31 @@
 
 
 
+<style media="screen">
 
+
+/* Style the button used to pause/play the video */
+#myBtn {
+width: 200px;
+font-size: 18px;
+padding: 10px;
+border: none;
+background: #000;
+color: #fff;
+cursor: pointer;
+}
+
+.container3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myBtn:hover {
+background: #ddd;
+color: black;
+}
+</style>
 
 
 
@@ -275,6 +299,27 @@
           </div>
 
       </div>
+
+    <div class="container3">
+
+      <video width="1200" height="600" autoplay muted loop>
+
+          <source src="{% static "ai.mp4" %}" type=video/mp4>
+            </video>
+            </div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- Optional: some overlay text to describe the video -->
+
 
 
 
