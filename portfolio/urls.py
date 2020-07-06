@@ -23,6 +23,7 @@ from django.conf.urls import url, include
 from blog.sitemaps import PostSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
+from blog import views as myapp_views
 
 sitemaps = {
     'posts': PostSitemap

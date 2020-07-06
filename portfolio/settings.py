@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    
 ]
 
 SITE_ID = 1
@@ -177,6 +178,10 @@ cloudinary.config(
   api_secret = os.environ.get('R0OWPvVrB0lxG1lB8x2x2x4porg'),
   secure = True
 )
+
+
+
+
 
 
 
