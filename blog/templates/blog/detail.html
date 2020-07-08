@@ -80,6 +80,18 @@ width : 100px;
 }
 
 
+
+
+
+</style>
+
+<style type="text/css">
+  input[type="checkbox" i] {
+    background-color: black;
+  }
+  .bg-stylish-color-dark{
+    background-color: #3E4551;
+  }
 </style>
 
 
@@ -130,6 +142,13 @@ width : 100px;
         </div>
       </nav>
     </header>
+
+    	<div class="container " id="myDiv">
+
+    <div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="darkTheme()">
+  <label id="onDarkThemeText" class="custom-control-label" for="customSwitches">Dark mode off</label>
+</div>
 
 
     <div class="container">
@@ -285,7 +304,8 @@ width : 100px;
   	</div>
 <br>
 <br>
-
+</div>
+</div>
     <!-- Page Footer-->
     <footer>
       <div class="container-fluid p-0">
@@ -341,6 +361,26 @@ width : 100px;
 
 
     </footer>
+    <script type="text/javascript">
+    function darkTheme(){
+      var checkDarkOnOrOf = document.getElementById('customSwitches').checked;
+      if ( checkDarkOnOrOf == true) {
+        var element = document.getElementById('myDiv');
+        element.classList.add('bg-stylish-color-dark');
+        element.classList.add('text-light');
+        document.getElementById('onDarkThemeText').innerHTML = 'Dark mode on';
+      }
+      if (checkDarkOnOrOf == false) {
+        var element = document.getElementById('myDiv');
+        element.classList.remove('bg-stylish-color-dark');
+        element.classList.remove('text-light');
+        document.getElementById('onDarkThemeText').innerHTML = 'Dark mode off';
+      }
+    }
+    </script>
+
+
+
 
 <!-- JavaScript files-->
 

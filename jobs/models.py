@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
-
+from django.http import HttpResponse
 from ckeditor.fields import RichTextField
 from django.db.models.signals import pre_save
 from jobs.utils import unique_slug_generator
