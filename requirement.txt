@@ -74,3 +74,4 @@ PyWavelets==1.0.3
 PyYAML==5.3.1
 pyzmq==18.0.1
 qtconsole==4.4.3
+django-robots
