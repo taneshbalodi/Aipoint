@@ -37,7 +37,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
-    url(r'^robots$', jobs.views.robots, name = 'robots'),
+    url(r'^robots\.txt$', jobs.views.robots, name = 'robots'),
 
     path('blog/', include('blog.urls')),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
