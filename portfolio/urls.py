@@ -26,7 +26,7 @@ from django.views.generic.base import TemplateView
 from blog import views as myapp_views
 
 sitemaps = {
-    'posts': PostSitemap
+    'posts': PostSitemap,
 
 }
 
@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^robots\.txt$', jobs.views.robots, name = 'robots'),
 
     path('blog/', include('blog.urls')),
-    path('sitemaps.xml', sitemaps, {'sitemaps':sitemaps}),
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
     url(r'^about$', jobs.views.about, name='about'),
     url(r'^privacy$', jobs.views.privacy, name='privacy'),
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
