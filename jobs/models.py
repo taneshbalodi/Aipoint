@@ -17,9 +17,13 @@ User = get_user_model()
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE , blank=True)
     profile_picture = models.ImageField()
+    Desc = models.CharField(max_length=100,blank=True)
 
     def __str__(self):
         return self.user.username
+
+    def __str__(self):
+        return self.Desc
 
 
 

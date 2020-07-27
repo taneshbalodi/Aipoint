@@ -279,10 +279,10 @@ width : 100px;
   			<div class="row">
   				<div class="card bg-light col-sm-8">
   					<div class="card-body row">
-  						<img src="https://analyticssteps.com/backend/media/profile_pic/4992835/497042_1568265385_tanesh.jpeg" class="profile-pic rounded-circle col-sm-3">
+  						<img src="{{ detail.author.profile_picture.url }}" class="profile-pic rounded-circle col-sm-3">
   						<div class="col-sm-8 w-100">
-  							<h3 class="card-title font-weight-bold"><a href="#" class="text-dark">Tanesh Balodi</a></h3>
-  							<p class="card-text text-secondary">Founder of Aipoint. He loves deploying data in ML and finds out different insights to play with industry trends.</p>
+  							<h3 class="card-title font-weight-bold"><a href="#" class="text-dark">{{ detail.author.user.username}}</a></h3>
+  							<p class="card-text text-secondary">{{ detail.author.Desc}}</p>
   						</div>
   						<div class="col-sm-1">
   							<div class="float-left p-1">
