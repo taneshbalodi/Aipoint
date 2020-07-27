@@ -24,9 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rclqxj*(z1hyq_og^cg-a!jozo14=n$t0mjm)2aq3x$wp9x-6z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
+
+
 
 
 # Application definition
@@ -60,6 +62,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
