@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^robots\.txt$', jobs.views.robots, name = 'robots'),
 
     path('blog/', include('blog.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
+    path('sitemaps.xml', sitemaps, {'sitemaps':sitemaps}),
     url(r'^about$', jobs.views.about, name='about'),
     url(r'^privacy$', jobs.views.privacy, name='privacy'),
     url(r'^ourservice$', jobs.views.ourservice, name='ourservice'),
