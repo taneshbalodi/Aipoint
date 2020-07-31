@@ -1,311 +1,296 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	{% load static %}
-	<!-- Required meta tags -->
-	<title>Our Services</title>
-
-	  <link rel="stylesheet" href="{% static "css/style.css" %}">
-
+	<head>
+		  {% load static %}
+		<title>Our service</title>
 		<meta name="keywords" content="Machine Learning, Data Science, Natural Language Processing, Artificial Intelligence, Python, Numpy, Matplotlib, Python Pandas">
 		<meta name = "description" content = "We Provide information Services related to Machine learning, Data Science and Artificial Intelligence. Our services include web-development, graphic designing and chatbots.">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<!-- Custom stylesheet -->
-<style type="text/css">
-	div.col-9 h3{
-		border-left: 2px solid darkgray;
-		padding-left: 10px;
-	}
-	img{
-		height: 300px;
-	}
-	.list-group-item.active{
-		background-color: lightseagreen;
-		border-color: lightseagreen;
-	}
-	header img{
-	height : 100px;
-	width : 100px;
-	}
-</style>
-</head>
-<body>
-<header>
-	<div class="container-fluid p-0">
-		<nav class="navbar navbar-expand-lg ">
-			<a class="navbar-brand" href="{% url "home" %}">
-				<img src="{% static "logo4.png" %}" alt="AIlogo">
+		<!-- Font Awesome -->
+		  
+			<link rel="shortcut icon" type="image/png" href="static/favicon.png">
+		<link rel="stylesheet" type="text/css" href="{% static "css/aboutmobile.css" %}">
+		<script src="https://kit.fontawesome.com/dc712985e0.js" crossorigin="anonymous"></script>
+		<!-- Bootstrap core CSS -->
+		<link href="https://mdbootstrap.com/previews/templates/saas/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="https://mdbootstrap.com/previews/templates/saas/css/mdb.min.css" rel="stylesheet">
+		<style>
+		html,
+		body,
+		header,
+		.jarallax {
+		height: 600px;
+		}
+		@media (max-width: 740px) {
+		html,
+		body,
+		header,
+		.jarallax {
+		height: 100vh;
+		}
+		}
+		@media (min-width: 800px) and (max-width: 850px) {
+		html,
+		body,
+		header,
+		.jarallax {
+		height: 100vh;
+		}
+		}
+		@media (min-width: 560px) and (max-width: 740px) {
+		header .jarallax h1 {
+		margin-bottom: 1rem !important;
+		}
+		header .jarallax h5 {
+		margin-bottom: 1rem !important;
+		}
+		}
+		@media (min-width: 800px) and (max-width: 850px) {
+		header .jarallax h1 {
+		margin-bottom: 1rem !important;
+		}
+		header .jarallax h5 {
+		margin-bottom: 1rem !important;
+		}
+		}
+		body {
+		font-weight: 400;
+		}
+		h6 {
+		line-height: 1.7;
+		}
 
-				AIpoint</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false"
-								 aria-label="Toggle navigation">
-								 <i class="fas fa-align-right text-light"></i>
-							 </button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<div class="mr-auto"></div>
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="{% url "home" %}">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url "post-list" %}">Blogs</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="{% url "privacy" %}">Privacy Policy</a>
-					</li>
-
-
-					<li class="nav-item">
-						<a class="nav-link" href="{% url "ourservice" %}">our services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url "about" %}">About us</a>
-					</li>
-
-				</ul>
-				<!-- Search form -->
+		</style>
+	</head>
 
 
-		</nav>
-	</header>
-	<body>
-		<!-- Our Services Starts Here -->
-		<section class="py-5">
-			<div class="my-5 container">
-				<div class="py-5 row animated fadeIn">
-					<div class="col-md-3 py-0 my-0">
-						<div class="row my-5">
-							<div class="col-3 text-center">
-								<a><i class="fa fa-desktop p-3" style="font-size: 2.5em"></i></a>
-							</div>
-							<div class="col-9">
-								<h3>Web Development</h3>
-							]
-							</div>
-						</div>
-						<div class="row my-5">
-							<div class="col-3 text-center">
-								<a><i class="fa fa-paint-brush p-3" style="font-size: 2.5em"></i></a>
-							</div>
-							<div class="col-9">
-								<h3>Graphic Designing</h3>
 
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 d-none d-md-block">
-						<div class="my-5 py-5 text-center">
-							<h1 class="display-3 my-4 animated bounceIn slow"><span class="text-default">Ai</span>Point</h1>
-						</div>
-					</div>
-					<div class="col-md-3 py-0 my-0">
-						<div class="row my-5">
-							<div class="col-3 text-center">
-								<a><i class="fa fa-comments p-3" style="font-size: 2.5em"></i></a>
-							</div>
-							<div class="col-9">
-								<h3>AI Based Chat Bots</h3>
+	<body class="creative-lp">
 
-							</div>
-						</div>
-						<div class="row my-5">
-							<div class="col-3 text-center">
-								<a><i class="fa fa-globe p-3" style="font-size: 2.5em"></i></a>
-							</div>
-							<div class="col-9">
-								<h3>Advertise with us</h3>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ">
+				<a class="navbar-brand" href="#">
+					<img src="{% static "logo.png" %}" class="logo" alt="AIlogo">
+					<label>
+						<h5>Aipoint</h5>
+					</label>
+				</a>
 
+
+
+
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none;">
+					<i class="fas fa-align-right text-light" aria-hidden="true"></i>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<div class="mr-auto"></div>
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="{% url "home" %}">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url "post-list" %}">Blogs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url "privacy" %}">Privacy Policy</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url "ourservice" %}">our services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url "about" %}">About us</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</nav>
+		</div>
+		<!-- Navigation & Intro -->
+		<header class="text-light">
+
+			<!-- Intro Section -->
+			<div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+				<div class="mask rgba-indigo-light">
+					<div class="container h-100 d-flex justify-content-center align-items-center">
+						<div class="row pt-5 mt-3">
+							<div class="col-md-12 wow fadeIn mb-3">
+								<div class="text-center white-text py-5 my-5">
+									<ul class="list-unstyled ">
+										<li>
+											<h1 class="display-4 mt-md-5 mt-lg-0 mb-5 font-weight-bold white-text wow fadeIn" data-wow-delay="0.3s">
+											<strong>
+											Here Is What We Offer</strong>
+											</h1>
+										</li>
+										<li>
+											<h5 class="white-text description mb-5 wow fadeIn" data-wow-delay="0.4s">At Aipoint we offer variety of services that includes web-development, graphic designing, chatbot and more. We also provide free information service on Machine learning and other technical domain.
+											</h5>
+										</li>
+
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</header>
+		<!-- Navigation & Intro -->
+		<main>
+			<div class="container">
+				<!-- Section: Features v.3 -->
+				<section id="features" class="section feature-box text-center my-5">
+					<!-- Section heading -->
+					<h2 class="title font-weight-bold my-5 wow fadeIn" data-wow-delay="0.2s">
+					<strong>Our services</strong>
+					</h2>
+					<!-- Section sescription -->
+					<p class="grey-text w-responsive mx-auto mb-5 wow fadeIn" data-wow-delay="0.2s">
+					Our services extends from being an information service platform to your in-budget web development platform and much more at affordable rates.</p>
+					<!--Grid row-->
+					<div class="row features wow fadeIn" data-wow-delay="0.2s">
+						<div class="col-md-4 col-lg-4 text-center">
+							<div class="icon-area">
+								<div class="circle-icon">
+									<i class="fas fa-desktop blue-text"></i>
+								</div>
+								<br>
+								<h5 class="dark-grey-text font-weight-bold mt-2">Web Development</h5>
+								<div class="mt-1">
+									<p class="mx-3 grey-text">Contact us in order to build your customized web application to boost your business, you can count on us.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-4 text-center">
+							<div class="icon-area">
+								<div class="circle-icon">
+									<i class="fas fa-paint-brush blue-text"></i>
+								</div>
+								<br>
+								<h5 class="dark-grey-text font-weight-bold mt-2">Graphic Designing</h5>
+								<div class="mt-1">
+									<p class="mx-3 grey-text">We have an creative team of talented graphic designer that make your imagination possible, contact us for pricing.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-4 text-center mb-4">
+							<div class="icon-area">
+								<div class="circle-icon">
+									<i class="fa fa-comments-o blue-text"></i>
+								</div>
+								<br>
+								<h5 class="dark-grey-text font-weight-bold mt-2">Chat Bots</h5>
+								<div class="mt-1">
+									<p class="mx-3 grey-text">Our developers excels in creating world class chatbots for our clients at very affordable price, contact us for pricing.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Grid row-->
+					<div class="row features wow fadeIn justify-content-center align-items-center" data-wow-delay="0.2s">
+						<div class="col-md-4 col-lg-4 text-center mb-4">
+							<div class="icon-area">
+								<div class="circle-icon">
+									<i class="fa fa-bar-chart blue-text"></i>
+								</div>
+								<br>
+								<h5 class="dark-grey-text font-weight-bold mt-2">Advertise With Us</h5>
+								<div class="mt-1">
+									<p class="mx-3 grey-text">We are constantly growing and our moto is to grow together, getting promoted is easy and under budget with us now.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-lg-4 text-center mb-4">
+							<div class="icon-area">
+								<div class="circle-icon">
+									<i class="fab fa-youtube blue-text"></i>
+								</div>
+								<br>
+								<h5 class="dark-grey-text font-weight-bold mt-2">Youtube Tutorials Video's</h5>
+								<div class="mt-1">
+									<p class="mx-3 grey-text">Information services on machine learning and other fields free of cost, All you need to do is subscribe the button.</p>
+								</div>
+							</div>
+						</div>
 
-		<section>
-			<hr>
-			<div class="container-fluid">
-				<div class="my-5 row text-center wow fadeIn">
-					<!-- First service starts -->
-					<div class="col-md-12 d-block d-md-none">
-						<img src="{% static "web-development.png"  %}"  class="w-100">
 					</div>
-					<div class="col-md-12 col-lg-8">
-						<h1 class="py-5">Web development</h1>
-							<p>Build your dream website for your business with our team of professional full stack developers, Prices starting from as low as 12000 INR with user friendly UI/UX and elegant Admin panel for owner, with two years of free maintenance and upgradation/customization. So what are you waiting for?.
-					</div>
-					<div class="col-lg-4 d-none d-md-block">
-						<img src="{% static "web-development.png"  %}" class="w-100">
-					</div>
-					<!-- first service ends -->
-				</div>
-				<hr>
-				<div class="my-5 row text-center wow fadeIn">
-					<!-- Second Service -->
-					<div class="col-md-12 d-block d-md-none">
-						<img src="{% static "grahic-designing.png" %}" class="w-100">
-					</div>
-					<div class="col-lg-4 d-none d-md-block">
-						<img src="{% static "grahic-designing.png" %}" class="w-100">
-					</div>
-					<div class="col-md-12 col-lg-8">
-						<h1 class="py-5">Graphic Designing</h1>
-							<p>For a uniqueness of a business website one needs everything unique, We are here to fulfill your graphic images/animation requirements at affordable rate (starting from 150 INR per image), contact us for more inforrmation on prices regarding animation.</p>
-					</div>
-					<!-- second service ends -->
-				</div>
-				<hr>
-				<div class="my-5 row text-center wow fadeIn">
-					<!-- third Service -->
-					<div class="col-md-12 d-block d-md-none">
-						<img src="{% static "chat-bots.png" %}" class="w-100">
-					</div>
-					<div class="col-md-12 col-lg-8">
-						<h1 class="py-5">AI based Chat Bots</h1>
-							<p>A fully functional Chatbot for your customization need in your business website, Just ask for your requirement and get it as soon as possible, Prices starting from as low as 20,000 INR, contact us for more information on Chatbots customization. </p>
-					</div>
-					<div class="col-lg-4 d-none d-md-block">
-						<img src="{% static "chat-bots.png" %}" class="w-100">
-					</div>
-					<!-- third service ends -->
-				</div>
-				<hr>
-				<div class="my-5 row text-center wow fadeIn">
-					<!-- Fourth Service -->
-					<div class="col-md-12 d-block d-md-none">
-						<img src="{% static "advertisment.png" %}" class="w-100">
-					</div>
-					<div class="col-lg-4 d-none d-md-block">
-						<img src="{% static "advertisment.png" %}" class="w-100">
-					</div>
-					<div class="col-md-12 col-lg-8">
-						<h1 class="py-5">Advertise with us</h1>
-							<p>Advertise your work or business website with us for more audience reach, to grow your business, audience with potential to become client is needed and therefore, Advertise you website with us to get more recognition in public. contact us to know more. </p>
-					</div>
-					<!-- Fourth service ends -->
-				</div>
-				<hr>
+				</section>
+				<!-- Section: Features v.3 -->
 			</div>
-		</section>
-		<!-- Contact details starts here-->
-		<section>
-			<div class="container my-5">
-				<h3><strong>Contact details</strong></h3>
-				<p>You've got any enquiry regarding us don't hesitate just contact us, we would love to assist you.</p>
-				<div class="row">
-				  <div class="col-2">
-				    <div class="list-group" id="list-tab" role="tablist">
-				      	<a class="list-group-item list-group-item-action active" id="list-email-list" data-toggle="list" href="#list-email" role="tab" aria-controls="Email">
-				      		<i class="fa fa-mail-bulk"></i><span class="d-none d-md-block">Email us</span>
-				  		</a>
-				      <a class="list-group-item list-group-item-action" id="list-call-us-list" data-toggle="list" href="#list-call-us" role="tab" aria-controls="call-us">
-				      	<i class="fa fa-phone"></i><span class="d-none d-md-block">Call us</span>
-				      </a>
-				      <a class="list-group-item list-group-item-action" id="list-whatsapp-list" data-toggle="list" href="#list-whatsapp" role="tab" aria-controls="whatsapp">
-				      	<i class="fab fa-whatsapp"></i><span class="d-none d-md-block">WhatsApp us</span>
-				      </a>
-				    </div>
-				  </div>
-				  <div class="col-10">
-				    <div class="tab-content" id="nav-tabContent">
-				      <div class="tab-pane fade show active" id="list-email" role="tabpanel" aria-labelledby="list-email-list">
-				      	<table class="table">
-				      		<thead class="thead-light">
-				      			<tr>
-				      				<th scope="col">#</th>
-				      				<th scope="col">Name</th>
-				      				<th scope="col">Details</th>
-				      			</tr>
-				      		</thead>
-				      		<tbody>
-							    <tr>
-							      <th scope="row">Founder</th>
-							      <td>Tanesh Balodi</td>
-							      <td><a href="mailto:taneshbalodi8@gmail.com" target="_blank">taneshbalodi8@gmail.com</a></td>
-							    </tr>
-							    <tr>
-							      <th scope="row">Developer</th>
-							      <td>Saroj Prasad</td>
-							      <td><a href="mailto:prasad.hunny03@gmail.com" target="_blank">prasad.hunny03@gmail.com</a></td>
-							    </tr>
-							</tbody>
-				      	</table>
-				      </div>
-				      <div class="tab-pane fade" id="list-call-us" role="tabpanel" aria-labelledby="list-call-us-list">
-				      	<table class="table">
-				      		<thead class="thead-light">
-				      			<tr>
-				      				<th scope="col">#</th>
-				      				<th scope="col">Name</th>
-				      				<th scope="col">Details</th>
-				      			</tr>
-				      		</thead>
-				      		<tbody>
-							    <tr>
-							      <th scope="row">Founder</th>
-							      <td>Tanesh Balodi</td>
-							      <td><a href="tel:+917838727941" target="_blank">+91 783-872-7941</a></td>
-							    </tr>
-							    <tr>
-							      <th scope="row">Developer</th>
-							      <td>Saroj Prasad</td>
-							      <td><a href="tel:+917827493472" target="_blank">+91 782-749-3472</a></td>
-							    </tr>
-							</tbody>
-				      	</table>
-				      </div>
-				      <div class="tab-pane fade" id="list-whatsapp" role="tabpanel" aria-labelledby="list-whatsapp-list">
-				      	<table class="table">
-				      		<thead class="thead-light">
-				      			<tr>
-				      				<th scope="col">#</th>
-				      				<th scope="col">Name</th>
-				      				<th scope="col">Details</th>
-				      			</tr>
-				      		</thead>
-				      		<tbody>
-							    <tr>
-							      <th scope="row">Founder</th>
-							      <td>Tanesh Balodi</td>
-							      <td><a href="https://wa.me/917838727941/?text=Dear%20Tanesh%20Balodi," target="_blank">+91 783-872-7941</a></td>
-							    </tr>
-							    <tr>
-							      <th scope="row">Developer</th>
-							      <td>Saroj Prasad</td>
-							      <td><a href="https://wa.me/917827493472/?text=Dear%20Saroj%20Prasad," target="_blank">+91 782-749-3472</a></td>
-							    </tr>
-							</tbody>
-				      	</table>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-			</div>
-		</section>
-		<!-- Contact details ends here -->
+			<!-- Streak -->
 
-		<!-- Our Services Ends Here -->
+			<!--/Streak-->
+			<div class="container-fluid" style="background-color: #f4f4fa">
+            <div class="container py-4">
+
+                <!--Section: Download-->
+                <section id="services" class="section mt-3 mb-3 pb-3">
+
+                    <!-- Grid row -->
+                    <div class="row mt-5 pt-5 wow fadeIn" data-wow-delay="0.4s">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 mb-5 text-center">
+
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1 rounded">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3Hz4eaYYmLo" allowfullscreen></iframe>
+
+                            </div>
+
+                        </div>
+                        <!-- /Grid column -->
+
+                        <!-- Second column -->
+                        <div class="col-md-6 mb-5 text-center">
+
+                            <!-- Section heading -->
+                            <h3 class="text-center title my-5 pt-4 pb-2 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                                <strong>Subscribe to our YouTube channel</strong>
+                            </h3>
+
+                            <div class="g-ytsubscribe" data-channelid="UCfXyjW_tPhnYO3CY0HuknhQ" data-layout="full" data-count="default"></div>
+                        </div>
+                        <!-- /.Grid column -->
+
+                    </div>
+                    <!-- /.Grid row -->
+
+                </section>
+                <!--/Section: Download-->
+
+            </div>
+        </div>
+				<div class="circle-icon">
+
+					<h3 class="text-center title my-5 pt-4 pb-2 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+							<strong>Contact us: Taneshbalodi8@gmail.com</strong>
+
+				</div>
+        <!--Second container-->
+
+		</main>
 		<!-- JQuery -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://mdbootstrap.com/previews/templates/saas/js/jquery-3.3.1.min.js"></script>
 		<!-- Bootstrap tooltips -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+		<script type="text/javascript" src="https://mdbootstrap.com/previews/templates/saas/js/popper.min.js"></script>
 		<!-- Bootstrap core JavaScript -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://mdbootstrap.com/previews/templates/saas/js/bootstrap.min.js"></script>
 		<!-- MDB core JavaScript -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-		<script type="text/javascript">
-			$( document ).ready(function() {
-			  new WOW().init();
-			});
+		<script type="text/javascript" src="https://mdbootstrap.com/previews/templates/saas/js/mdb.min.js"></script>
+		<script>
+		//Animation init
+		new WOW().init();
+		// Material Select Initialization
+		$(document).ready(function () {
+		$('.mdb-select').material_select();
+		});
 		</script>
+		<script src="https://apis.google.com/js/platform.js"></script>
 	</body>
 </html>
