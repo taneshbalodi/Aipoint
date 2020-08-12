@@ -35,7 +35,7 @@ sitemaps = {
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('aipoint0824/', admin.site.urls),
     path('', jobs.views.home, name = 'home'),
     url(r'^robots\.txt$', jobs.views.robots, name = 'robots'),
 
