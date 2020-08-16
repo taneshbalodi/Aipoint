@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator , EmptyPage , PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import blog
-from jobs.models import posts
+from jobs.models import posts, category
 from django.db.models import Count, Q
 
 # Create your views here
@@ -88,3 +88,58 @@ def detail(request,slug):
 
 def about(request):
     return render(request,'blog/about.html')
+
+def Categories(request):
+        category_count = get_category_count()
+        most_recent = posts.objects.order_by('-timestamp')[:6]
+        post_list = posts.objects.all()
+        paginator = Paginator(post_list , 4)
+        page_request_var = 'page'
+        page = request.GET.get(page_request_var)
+        try:
+            paginated_queryset = paginator.page(page)
+
+        except PageNotAnInteger:
+            paginated_queryset = paginator.page(1)
+
+        except EmptyPage:
+            paginated_queryset = paginator.page(paginator.num_pages)
+
+        context = {
+        'queryset' : paginated_queryset,
+        'most_recent' : most_recent ,
+        'page_request_var' : page_request_var,
+        'category_count': category_count,
+
+        }
+
+        return render(request, 'blog/Categories.html', context)
+
+def Video_cat(request):
+    return render(request, 'blog/Video_cat.html')
+
+def Cat_list(request,categories):
+    category_count = get_category_count()
+
+    category_post = posts.objects.filter(categories=categories)
+    post_list = posts.objects.all()
+    paginator = Paginator(post_list , 6)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        paginated_queryset = paginator.page(page)
+
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+    context = {
+    'queryset' : paginated_queryset,
+
+    'page_request_var' : page_request_var,
+    'category_count': category_count,
+    'category_post': category_post,
+    }
+    return render(request, 'blog/Cat_list.html', context)

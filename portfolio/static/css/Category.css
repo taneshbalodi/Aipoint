@@ -1,0 +1,15 @@
+.bg-slate{
+    background-color: slateblue;
+}
+.fnavbar, .ffooter{
+    font-family: "Sniglet",cursive;
+}
+.fmain .header{
+    font-family: 'Lobster Two', cursive;
+}
+
+
+/* --snigle-font: "Sniglet",cursive;
+--Rubik: "Rubik",cursive;
+--Patua: "patua",cursive;
+--Lobster: "lobster",cursive; */

@@ -29,10 +29,19 @@ class Author(models.Model):
 
 class category(models.Model):
     title = models.CharField(max_length=20)
+    Image = models.ImageField()
+    Description = models.CharField(max_length=100,blank=True)
 
 
     def __str__(self):
         return self.title
+
+
+    @staticmethod
+    def get_all_categories():
+        return Category.obects.all()
+
+
 
 
 
@@ -56,8 +65,9 @@ class posts(models.Model):
     next_post = models.ForeignKey('self', related_name = 'next' , on_delete = models.SET_NULL, blank = True, null = True)
 
 
-
-
+    @staticmethod
+    def get_all_categories_id(category_title):
+        return posts.obects.filter(category = category_title)
 
     def __str__(self):
         return self.title
